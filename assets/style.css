@@ -446,7 +446,7 @@ header a:visited {
   border-bottom: 2px solid;
 }
 
-.nav ul, .checklist {
+.nav ul, .checklist, #recent-posts ul {
  /* margin: 0; */
  padding: 0;
 }
@@ -461,7 +461,7 @@ header a:visited {
   margin-right: 0;
 }
 
-#meta-info {
+.meta-info {
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 1.8rem;
 }
@@ -500,4 +500,13 @@ footer nav ul {
 
 #priv-imprint {
   margin-top: 2rem;
+}
+
+#recent-posts li {
+  display: flex;
+  justify-content: space-between;
+}
+
+span.meta-info {
+  margin: 0 0 0 2rem;
 }
