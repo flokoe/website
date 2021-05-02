@@ -1,3 +1,10 @@
 baseURL = "https://hellodevops.blog/"
 languageCode = "en"
-title = "Hello DevOps Blog"
+title = "Hello DevOps"
+
+[markup.highlight]
+  style = "dracula"
+  lineNos = true
+
+[markup.goldmark.parser.attribute]
+  block = true
