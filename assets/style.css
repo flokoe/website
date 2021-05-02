@@ -413,6 +413,8 @@ mark {
 }
 
 header {
+  max-width: 44rem;
+  margin: 0 auto;
   display: flex;
   align-items: baseline;
   margin-bottom: 1.8rem;
@@ -463,7 +465,15 @@ header a:visited {
 }
 
 main {
-  margin-bottom: 4.5rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+footer {
+  max-width: 43rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 footer p {
