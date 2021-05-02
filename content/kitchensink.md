@@ -6,11 +6,14 @@ draft: true
 
 Text can be **bold**, *italic*, or ~~strikethrough~~.
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KICla9k7h28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 [Link to another page](https://hellodevops.blog).
 
-There should be whitespace between paragraphs.
+There should be whitespace between paragraphs.<sup>1</sup> <sub>2</sub>
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+There should <mark>be whitespace between</mark> paragraphs. We recommend including a README, or a file with `infgoprmation` about your project.
 
 ## Header 2
 
@@ -49,12 +52,12 @@ end
 
 ###### Header 6
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| head1        | head two          | three | head two          | three | head two          |
+|:-------------|:------------------|:------|:------------------|:------|:------------------|
+| ok           | good swedish fish | nice  | good swedish fish | nice  | good swedish fish |
+| out of stock | good and plenty   | nice  | good and plenty   | nice  | good and plenty   |
+| ok           | good `oreos`      | hmm   | good `oreos`      | hmm   | good `oreos`      |
+| ok           | good `zoute` drop | yumm  | good `zoute` drop | yumm  | good `zoute` drop |
 
 ### There's a horizontal rule below this
 
@@ -113,6 +116,7 @@ end
 * [ ] Hello, this is a TODO item
 * [ ] Hello, this is another TODO item
 * [x] Goodbye, this item is done
+{.checklist}
 
 ### Small image
 
