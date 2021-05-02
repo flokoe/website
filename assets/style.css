@@ -457,6 +457,10 @@ header a:visited {
  margin-right: 1rem;
 }
 
+.nav li:last-child {
+  margin-right: 0;
+}
+
 #meta-info {
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 1.8rem;
@@ -486,14 +490,14 @@ footer p {
   margin-bottom: 0;
 }
 
-footer div ul {
-  margin-bottom: .3rem;
-}
-
 footer nav ul {
   margin-bottom: 0;
 }
 
-footer nav {
+#social {
+  margin-bottom: .3rem;
+}
+
+#priv-imprint {
   margin-top: 2rem;
 }
