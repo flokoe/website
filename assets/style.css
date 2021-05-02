@@ -1,0 +1,483 @@
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+/**
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Use a 4-space tab width in all browsers (opinionated).
+ * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ * 6. Breaks words to prevent overflow in all browsers (opinionated).
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  font-family:
+  system-ui,
+  /* macOS 10.11-10.12 */ -apple-system,
+  /* Windows 6+ */ "Segoe UI",
+  /* Android 4+ */ "Roboto",
+  "Helvetica Neue",
+  /* Ubuntu 10.10+ */ "Ubuntu",
+  /* Gnome 3+ */ "Cantarell",
+  /* KDE Plasma 5+ */ "Noto Sans",
+  "Open Sans",
+  "Liberation Sans",
+  /* fallback */ sans-serif,
+  /* macOS emoji */ "Apple Color Emoji",
+  /* Windows emoji */ "Segoe UI Emoji",
+  /* Windows emoji */ "Segoe UI Symbol",
+  /* Linux emoji */ "Noto Color Emoji";
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  -webkit-tap-highlight-color: transparent /* 4 */;
+  -ms-text-size-adjust: 100%; /* 5 */
+  -webkit-text-size-adjust: 100%; /* 5 */
+  word-break: break-word; /* 6 */
+  /* font-weight: 400; */
+  scroll-behavior: smooth;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+h6, h5, h4, h3, h2, h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  /* font-weight: 500; */
+  line-height: 1.2;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+ h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 1.5rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Add the correct text decoration in Edge 18-, IE, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family:
+    /* macOS 10.10+ */ "Menlo",
+    /* Windows 6+ */ "Consolas",
+    /* Android 4+ */ "Roboto Mono",
+    /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+    /* KDE Plasma 5+ */ "Noto Mono",
+    "Open Sans Mono",
+    /* Linux/OpenOffice fallback */ "Liberation Mono",
+    /* fallback */ monospace,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+  font-size: 1rem; /* 2 */
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  padding: .8rem;
+}
+
+td pre {
+  margin: 0;
+}
+
+td:first-child pre {
+  padding-right: 0;
+}
+
+td:nth-child(2) pre {
+  padding-left: .5rem;
+}
+
+p code {
+  background: lightgray;
+  border-radius: 3px;
+  padding: .2rem .2rem .1rem .2rem;
+  vertical-align: middle;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 85%;
+}
+
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+iframe {
+  border-style: none;
+}
+
+/**
+ * Collapse border spacing in all browsers (opinionated).
+ */
+table {
+  text-indent: 0; /* 1 */
+  border-collapse: collapse;
+  margin-bottom: 1.3rem;
+  word-break: normal;
+  display: block;
+  overflow: auto;
+}
+
+thead {
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+th, td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: .5rem .7rem;
+}
+
+tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Remove the margin on controls in Safari.
+ */
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+* 1. Show the overflow in IE.
+* 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+*/
+button {
+  overflow: visible; /* 1 */
+  text-transform: none; /* 2 */
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/*
+ * 1. Remove the tapping delay in IE 10.
+ * 2. Remove the tapping delay on clickable elements
+      in all browsers (opinionated).
+ */
+/* a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; /* 1 */
+  /*touch-action: manipulation; /* 2 */
+/*} */
+
+/**
+ * Restrict sizing to the page width in all browsers (opinionated).
+ */
+iframe,
+img,
+input,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25rem;
+}
+
+sup {
+	top: -0.5rem;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+}
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  padding-left: 1rem;
+}
+
+mark {
+  padding: .2rem .2rem .1rem .2rem;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1.8rem;
+}
+
+#home {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: normal;
+  margin-right: 1.8rem;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header a:visited {
+  color: inherit;
+}
+
+.nav a:hover, .active {
+  border-bottom: 2px solid;
+}
+
+.nav ul, .checklist {
+ /* margin: 0; */
+ padding: 0;
+}
+
+.nav li, .checklist {
+ list-style: none;
+ display: inline-block;
+ margin-right: 1rem;
+}
+
+#meta-info {
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.8rem;
+}
+
+.highlight {
+  margin-bottom: 1rem;
+}
+
+.highlight > div, .highlight table {
+  border-radius: 3px;
+}
+
+main {
+  margin-bottom: 4.5rem;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+footer div ul {
+  margin-bottom: .3rem;
+}
+
+footer nav ul {
+  margin-bottom: 0;
+}
+
+footer nav {
+  margin-top: 2rem;
+}
