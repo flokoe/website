@@ -1,8 +1,8 @@
 {{ define "main" }}
     <article>
         <h1>{{ .Title }}</h1>
-        <section id="meta-info">
-            <time id="publish-date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
+        <section class="meta-info">
+            <time class="publish-date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
         </section>
         {{ .Content }}
     </article>
