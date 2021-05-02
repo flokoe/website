@@ -427,6 +427,12 @@ header {
   margin-right: 1.8rem;
 }
 
+#home span {
+  font-size: 1.1rem;
+  vertical-align: text-bottom;
+  color: #ff6ac1;
+}
+
 header a {
   text-decoration: none;
   color: inherit;
