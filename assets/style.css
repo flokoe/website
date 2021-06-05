@@ -45,7 +45,7 @@ body {
   /* Linux emoji */ "Noto Color Emoji";
   margin: 0;
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.5; /* 2 */
   -moz-tab-size: 4; /* 3 */
   tab-size: 4; /* 3 */
@@ -156,7 +156,7 @@ samp {
     /* Windows emoji */ "Segoe UI Emoji",
     /* Windows emoji */ "Segoe UI Symbol",
     /* Linux emoji */ "Noto Color Emoji";
-  font-size: 1rem; /* 2 */
+  font-size: 1.1rem; /* 2 */
 }
 
 pre {
