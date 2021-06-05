@@ -1,3 +1,42 @@
+:root {
+  --bg-color: #fff;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --medium-emphasis-color: rgba(0, 0, 0, 0.6);
+  --code-block-color: lightgray;
+  --blockquote-color: rgba(0, 0, 0, 0.2);
+  --table-border-color: rgba(0, 0, 0, 0.2);
+  --nth-table-row-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --medium-emphasis-color: rgba(255, 255, 255, 0.6);
+    --code-block-color: rgb(40, 42, 54);
+    --blockquote-color: rgba(255, 255, 255, 0.4);
+    --table-border-color: rgba(255, 255, 255, 0.3);
+    --nth-table-row-color: rgba(255, 255, 255, 0.1);
+  }
+
+  a {
+    color: dodgerblue;
+  }
+
+  a:visited {
+    color: blueviolet;
+  }
+
+  #social svg {
+    fill: var(--text-color);
+  }
+
+  #mail-icon {
+    fill: none !important;
+    stroke: var(--text-color);
+  }
+}
+
 /**
  * Add border box sizing in all browsers (opinionated).
  */
@@ -55,8 +94,8 @@ body {
   word-break: break-word; /* 6 */
   /* font-weight: 400; */
   scroll-behavior: smooth;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.87);
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 h6, h5, h4, h3, h2, h1 {
@@ -180,7 +219,7 @@ td:nth-child(2) pre {
 }
 
 p code {
-  background: lightgray;
+  background: var(--code-block-color);
   border-radius: 3px;
   padding: .2rem .2rem .1rem .2rem;
   vertical-align: middle;
@@ -230,12 +269,12 @@ thead {
 }
 
 th, td {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--table-border-color);
   padding: .5rem .7rem;
 }
 
 tr:nth-child(2n) {
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--nth-table-row-color);
 }
 
 /**
@@ -404,7 +443,7 @@ dd {
 
 blockquote {
   margin: 0;
-  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  border-left: 4px solid var(--blockquote-color);
   padding-left: 1rem;
 }
 
@@ -462,7 +501,7 @@ header a:visited {
 }
 
 .meta-info {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--medium-emphasis-color);
 }
 
 section.meta-info {
