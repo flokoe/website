@@ -481,7 +481,7 @@ header a:visited {
   color: inherit;
 }
 
-.nav a:hover, .active {
+header .nav a:hover, .active {
   border-bottom: 2px solid;
 }
 
