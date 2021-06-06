@@ -8,6 +8,9 @@
 
     {{ $style := resources.Get "style.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <header>

@@ -4,7 +4,7 @@ Mein Hello DevOps blog.
 
 ## todo
 
-- [ ] dark mode
+- [x] dark mode
 - [ ] social media tags
 - [ ] copy to clipboard for code
 - [ ] sort table by column
