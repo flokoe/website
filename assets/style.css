@@ -482,7 +482,7 @@ header a:visited {
 }
 
 header .nav a:hover, .active {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--text-color);
 }
 
 .nav ul, .checklist, #recent-posts ul, .month ul {
