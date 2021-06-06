@@ -504,7 +504,7 @@ header .nav a:hover, .active {
   color: var(--medium-emphasis-color);
 }
 
-section.meta-info {
+p.meta-info {
   margin-bottom: 1.8rem;
 }
 
