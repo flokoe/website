@@ -10,3 +10,7 @@ Mein Hello DevOps blog.
 - [ ] sort table by column
 - [ ] make tables more beatiful
 - [ ] pagination on posts page
+- [ ] enlarge images
+- [ ] use different sizes of images for preview and enlarge
+- [ ] initial content (home, privary impressum)
+- [ ] enable email
