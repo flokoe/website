@@ -6,4 +6,4 @@ draft: false
 
 My name is Florian, and I am a DevOps Engineer from Germany. You've landed on my engineering blog, where I write about [things I work on](/now/) and share what I've learned.
 
-I love clean solutions but do some hacky things sometimes. I am passionate about Open Source, GNU/Linux, and generally speaking modern systems operations. [Learn more about my background here](/about/).
+I love clean solutions but do some hacky things sometimes. I am passionate about Open Source, GNU/Linux, automation and generally speaking modern systems operations. [Learn more about my background here](/about/).
