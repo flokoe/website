@@ -14,8 +14,15 @@
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta name="twitter:card" content="summary">
 
-    {{ $style := resources.Get "style.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <!-- {{ $style := resources.Get "main.css" | resources.PostCSS (dict "inlineImports" true) }} -->
+    {{ $style := resources.Get "main.css" | resources.PostCSS }}
+
+    {{ if hugo.IsProduction }}
+      {{ $style | resources.Minify | resources.Fingerprint }}
+    {{ end }}
+
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
