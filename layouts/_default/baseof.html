@@ -32,7 +32,9 @@
         <em id="home"><a href="/"><span>❯</span> {{ lower .Site.Title }}</a></em>
         <nav class="nav">
             <ul>
-                <li><a href="/posts/">Posts</a></li>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
             </ul>
         </nav>
     </header>
