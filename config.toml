@@ -1,6 +1,8 @@
 baseURL = "https://hellodevops.blog/"
 languageCode = "en"
 title = "Hello DevOps"
+enableEmoji = true
+disableKinds = ["taxonomy", "term"]
 
 [markup.highlight]
   style = "dracula"
