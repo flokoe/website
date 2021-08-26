@@ -4,6 +4,6 @@ date: 2021-05-02T14:28:35+02:00
 draft: false
 ---
 
-My name is Florian, and I am a DevOps Engineer from Germany. You've landed on my engineering blog, where I write about [things I work on](/now) and share what I've learned.
+My name is Florian, and I am a DevOps Engineer from Germany. You've landed on my engineering blog, where I write about [things I work on](/now/) and share what I've learned.
 
-I love clean solutions but do some hacky things sometimes. I am passionate about Open Source, GNU/Linux, and generally speaking modern systems operations. [Learn more about my background here](/whoami).
+I love clean solutions but do some hacky things sometimes. I am passionate about Open Source, GNU/Linux, and generally speaking modern systems operations. [Learn more about my background here](/about/).
