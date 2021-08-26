@@ -3,7 +3,7 @@ module.exports = {
     enabled: process.env.HUGO_ENVIRONMENT === "production",
     content: ["./layouts/**/*.html", "./content/**/*.md", "./content/**/*.html"],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
   },
