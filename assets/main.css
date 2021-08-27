@@ -11,11 +11,94 @@
     @apply text-3xl mb-2 font-bold
   }
 
+  article h2 {
+    @apply text-2xl mb-2 font-bold
+  }
+
+  article h3 {
+    @apply text-xl mb-2 font-bold
+  }
+
+  article h4 {
+    @apply mb-2 font-bold
+  }
+
   article p {
     @apply mb-4
   }
 
   article a {
     @apply text-blue-500 underline
+  }
+
+  article p code {
+    @apply rounded  bg-gray-300 dark:bg-codedark px-2 py-1
+  }
+
+  article blockquote {
+    @apply pl-4 border-solid border-l-4 border-gray-300
+  }
+
+  article .highlight {
+    @apply mb-4
+  }
+
+  article .highlight > div, article .highlight table {
+    @apply rounded
+  }
+
+  article pre {
+    @apply p-4
+  }
+
+  article table {
+    @apply block overflow-auto mb-5
+  }
+
+  article td:first-child pre {
+    @apply pr-0
+  }
+
+  article td:nth-child(2) pre {
+    @apply pl-1
+  }
+
+  article ul {
+    @apply list-disc
+  }
+
+  article ol {
+    @apply list-decimal
+  }
+
+  article ol,
+  article ul {
+    @apply pl-8
+  }
+
+  article ol,
+  article ul,
+  article dl {
+    @apply mb-4
+  }
+
+  article .checklist {
+    @apply p-0 list-none
+  }
+
+  article dt {
+    @apply font-bold
+  }
+
+  article dd {
+    @apply mb-1 ml-2
+  }
+
+  article th, article td {
+    @apply border-solid border border-gray-300 dark:border-gray-700 py-1 px-2
+  }
+
+  article tr:nth-child(2n) {
+    @apply bg-gray-200 dark:bg-gray-800
   }
 }
