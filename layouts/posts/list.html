@@ -1,14 +1,14 @@
 {{ define "main" }}
-    <section id="archive">
-        <h1>{{ .Title }}</h1>
+    <section>
+        <h1 class="text-3xl mb-2 font-bold">{{ .Title }}</h1>
         {{ $pages := (where .Site.RegularPages "Section" "posts") }}
         {{ range $pages.GroupByDate "2006" }}
-            <section class="month" id="{{ lower .Key }}">
-                <h2>{{ .Key }}</h2>
+            <section>
+                <h2 class="text-xl mb-1 font-bold">{{ .Key }}</h2>
 
                 <ul>
                     {{ range .Pages }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta-info"><time class="publish-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                    <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
