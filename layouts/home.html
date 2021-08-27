@@ -11,22 +11,29 @@
     </article>
     <div>
         <p class="text-lg mb-8">Don't know what to read? Look no further, start here!</p>
+        {{ with .Site.Menus.favorites }}
         <section class="mb-8">
             <h2 class="text-xl font-bold">Some Personal Favorites</h2>
             <ul>
-                {{ range first 10 .Site.Menus.favorites }}
+                {{ range first 10 . }}
                 <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
+        {{ end }}
+
+        {{ $popular_posts := false }}
+        {{ with $popular_posts }}
         <section  class="mb-8">
             <h2  class="text-xl font-bold">What Others Find Popular</h2>
             <ul>
-                {{ range first 10 .Site.Menus.favorites }}
+                {{ range first 10 . }}
                 <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
+        {{ end }}
+
         <section>
             <h2 class="text-xl font-bold">Recent Posts</h2>
             <ul>
