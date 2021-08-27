@@ -1,16 +1,39 @@
 {{ define "main" }}
-    <section id="profile">
-        <img id="profile-pic" src="profile-pic.jpg" alt="Yep, that's me!">
+    <article class="mb-16">
         <h1>{{ .Title }}</h1>
         {{ .Content }}
-        {{ partial "social.html" . }}
-    </section>
-    <section id="recent-posts">
-        <h2>Recent Posts</h2>
-        <ul>
-            {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta-info"><time class="publish-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+
+        <ul class="flex">
+            {{ range .Site.Menus.social }}
+            <li class="mr-4 w-7"><a href="{{ .URL }}">{{ .Pre }}</a></li>
             {{ end }}
         </ul>
-    </section>
+    </article>
+    <div>
+        <p class="text-lg mb-8">Don't know what to read? Look no further, start here!</p>
+        <section class="mb-8">
+            <h2 class="text-xl font-bold">Some Personal Favorites</h2>
+            <ul>
+                {{ range first 10 .Site.Menus.favorites }}
+                <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+        <section  class="mb-8">
+            <h2  class="text-xl font-bold">What Others Find Popular</h2>
+            <ul>
+                {{ range first 10 .Site.Menus.favorites }}
+                <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+        <section>
+            <h2 class="text-xl font-bold">Recent Posts</h2>
+            <ul>
+                {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
+                    <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+    </div>
 {{ end }}
