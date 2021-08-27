@@ -2,6 +2,7 @@
 title: "Kitchensink"
 date: 2021-05-01T16:50:37+02:00
 draft: true
+menu: favorites
 ---
 
 Text can be **bold**, *italic*, or ~~strikethrough~~.
