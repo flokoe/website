@@ -13,6 +13,7 @@ module.exports = {
         prompt: '#ff6ac1',
         mediumemphasis: 'rgba(0, 0, 0, 0.6)',
         darkmediumemphasis: 'rgba(255, 255, 255, 0.6)',
+        codedark: 'rgb(40, 42, 54)',
       },
     },
   },
