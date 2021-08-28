@@ -2,6 +2,7 @@
 title: Hi, my name is Florian, I'm a DevOps Engineer and this is my engineering blog
 date: 2021-05-02T14:28:35+02:00
 draft: false
+description: I am passionate about Open Source, GNU/Linux, automation and generally speaking modern systems operations and I write about what I've learned
 ---
 
 <!-- markdownlint-disable -->
