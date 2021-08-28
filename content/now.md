@@ -6,6 +6,7 @@ menu:
   main:
     name: Now
     weight: 20
+description: For those who are wondering what I am currently working on. Here is a simple list.
 ---
 
 For those who are wondering what I am currently working on. Here is a simple list.
