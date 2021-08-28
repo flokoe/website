@@ -16,4 +16,4 @@ For those who are wondering what I am currently working on. Here is a simple lis
 - Trying to reach self-employment or atleast freelancing.
 - Increase knowledge in DevSec.
 
-Inspired by [The /now page movement](https://sive.rs/nowff).
+Inspired by [Derek Sivers](https://sive.rs/nowff). See [The /now page movement](https://nownownow.com/about).
