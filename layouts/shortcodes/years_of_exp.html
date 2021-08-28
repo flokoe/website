@@ -1,0 +1,20 @@
+{{- $cur_year := now.Format "2006" -}}
+{{- $cur_year := int $cur_year -}}
+
+{{- $years_of_exp := sub $cur_year 2016 -}}
+
+{{- if (eq $years_of_exp 5) -}}
+five
+{{- else if (eq $years_of_exp 6) -}}
+six
+{{- else if (eq $years_of_exp 7) -}}
+seven
+{{- else if (eq $years_of_exp 8) -}}
+eight
+{{- else if (eq $years_of_exp 9) -}}
+nine
+{{- else if (eq $years_of_exp 10) -}}
+ten
+{{- else -}}
+{{- $years_of_exp -}}
+{{- end -}}
