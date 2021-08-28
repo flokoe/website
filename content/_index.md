@@ -1,8 +1,12 @@
 ---
-title: Hi there 👋
+title: Hi, my name is Florian, I'm a DevOps Engineer and this is my engineering blog
 date: 2021-05-02T14:28:35+02:00
 draft: false
 ---
+
+<!-- markdownlint-disable -->
+
+# Hi there 👋
 
 My name is Florian, and I am a DevOps Engineer from Germany. You've landed on my engineering blog, where I write about [things I work on](/now/) and share what I've learned.
 
