@@ -3,6 +3,7 @@ languageCode = "en"
 title = "Hello DevOps"
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]
+enableGitInfo = true
 
 [markup.highlight]
   style = "dracula"
