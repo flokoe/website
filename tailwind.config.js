@@ -15,10 +15,16 @@ module.exports = {
         darkmediumemphasis: 'rgba(255, 255, 255, 0.6)',
         codedark: 'rgb(40, 42, 54)',
       },
+      screens: {
+        'mobile': '428px',
+        'xs': '613px',
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ['last']
+    },
   },
   plugins: [],
 }

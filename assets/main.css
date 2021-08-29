@@ -4,31 +4,35 @@
 
 @layer base {
   body {
-    @apply text-lg p-4
+    @apply text-lg p-4 mobile:text-xl
   }
 
   article h1 {
-    @apply text-3xl mb-2 font-bold
+    @apply text-4xl mb-2 font-bold mobile:text-5xl mobile:mb-3
   }
 
   article h2 {
-    @apply text-2xl mb-2 font-bold
+    @apply text-3xl mb-2 font-bold mobile:text-4xl mobile:mb-3
   }
 
   article h3 {
-    @apply text-xl mb-2 font-bold
+    @apply text-2xl mb-2 font-bold mobile:text-3xl mobile:mb-3
   }
 
   article h4 {
-    @apply mb-2 font-bold
+    @apply text-xl mb-2 font-bold mobile:text-2xl mobile:mb-3
+  }
+
+  article h5 {
+    @apply mb-2 font-bold mobile:mb-3
   }
 
   article p {
-    @apply mb-4
+    @apply mb-5 mobile:mb-6
   }
 
   article a {
-    @apply text-blue-500 underline
+    @apply text-blue-500
   }
 
   article p code {
@@ -100,5 +104,9 @@
 
   article tr:nth-child(2n) {
     @apply bg-gray-200 dark:bg-gray-800
+  }
+
+  article figcaption {
+    @apply text-mediumemphasis dark:text-darkmediumemphasis text-base mobile:text-lg
   }
 }
