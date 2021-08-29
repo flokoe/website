@@ -32,7 +32,7 @@
   }
 
   article a {
-    @apply text-blue-600
+    @apply text-blue-600 dark:text-blue-500
   }
 
   article p code {

@@ -4,7 +4,7 @@
 
         <ul class="flex m-0 p-0 list-none">
             {{ range .Site.Menus.social }}
-            <li class="mr-4 w-7"><a href="{{ .URL }}">{{ .Pre }}</a></li>
+            <li class="mr-4 w-7"><a href="{{ .URL }}" aria-label="{{ title .Identifier }}">{{ .Pre }}</a></li>
             {{ end }}
         </ul>
     </article>
@@ -15,7 +15,7 @@
             <h2 class="text-2xl mobile:text-3xl font-bold">Some Personal Favorites</h2>
             <ul>
                 {{ range first 10 . }}
-                <li class="flex flex-col mb-3"><a class="text-blue-600" href="{{ .URL }}">{{ .Name }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                <li class="flex flex-col mb-3"><a class="text-blue-600 dark:text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
@@ -27,7 +27,7 @@
             <h2  class="text-2xl mobile:text-3xl font-bold">What Others Find Popular</h2>
             <ul>
                 {{ range first 10 . }}
-                <li class="flex flex-col mb-3"><a class="text-blue-600" href="{{ .URL }}">{{ .Name }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                <li class="flex flex-col mb-3"><a class="text-blue-600 dark:text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
@@ -37,7 +37,7 @@
             <h2 class="text-2xl mobile:text-3xl font-bold">Recent Posts</h2>
             <ul>
                 {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-                    <li class="flex flex-col mb-3"><a class="text-blue-600" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                    <li class="flex flex-col mb-3"><a class="text-blue-600 dark:text-blue-500" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
