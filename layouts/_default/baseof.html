@@ -17,7 +17,7 @@
     {{ $style := resources.Get "main.css" | resources.PostCSS }}
 
     {{ if hugo.IsProduction }}
-      {{ $style | resources.Minify | resources.Fingerprint }}
+        {{ $style = $style | minify | fingerprint }}
     {{ end }}
 
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
