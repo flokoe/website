@@ -13,4 +13,8 @@ Mein Hello DevOps blog.
 - [ ] enlarge images
 - [ ] use different sizes of images for preview and enlarge
 - [ ] initial content (home, privary impressum)
-- [ ] enable email
+- [x] enable email
+- [ ] link cvisit color fixen
+- [ ] Alle hugo configs durchgehen (minificaition etc)
+- [ ] Font size in code block to big
+- [ ] design auf allen seiten nochmal checken
