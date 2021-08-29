@@ -12,7 +12,9 @@ My name is Florian Köhler, and I live around Hamburg, Germany. I am an Open Sou
 
 {{< figure src="/profile-pic.jpg" alt="Me trying to look good." caption="Me trying to look good." >}}
 
-I now got about {{% years_of_exp %}} years of experience in tech, where I worked with big companies all around Germany. During this time, I learned many different skills and got to know various perspectives of entrepreneurship. Currently, my focus lies on high availability systems, GNU/Linux, mainly Debian, security, automation (Puppet, pipelines, etc.), databases, and everything around web hosting. In general, I enjoy learning about computers, automation, security, and a bit of entrepreneurship.
+I now got about {{% years_of_exp %}} years of experience in tech, where I worked with big companies all around Germany. During this time, I learned many different skills and got to know various perspectives of entrepreneurship.
+
+Currently, my focus lies on high availability systems, GNU/Linux, mainly Debian, security, automation (Puppet, pipelines, etc.), databases, and everything around web hosting. In general, I enjoy learning about computers, automation, security, and a bit of entrepreneurship.
 
 This blog is for me to remember how things work and for everyone else interested in tech. Maybe you find an interesting read or two.
 
