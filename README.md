@@ -22,3 +22,5 @@ Mein Hello DevOps blog.
 - [x] netlify config checken
 - [ ] plausible analytics aufsetzen
 - [ ] create scheduled deployment every 2 weeks via gh actions and webhook for netlify
+- [ ] security bei mozilla und ssllabs checken
+- [ ] cache control
