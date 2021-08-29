@@ -18,3 +18,7 @@ Mein Hello DevOps blog.
 - [x] Alle hugo configs durchgehen (minificaition etc)
 - [ ] Font size in code block to big
 - [ ] design auf allen seiten nochmal checken
+- [ ] Google lighthouse für mobile und desktop checken und dark mode
+- [x] netlify config checken
+- [ ] plausible analytics aufsetzen
+- [ ] create scheduled deployment every 2 weeks via gh actions and webhook for netlify
