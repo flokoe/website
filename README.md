@@ -15,6 +15,6 @@ Mein Hello DevOps blog.
 - [ ] initial content (home, privary impressum)
 - [x] enable email
 - [ ] link cvisit color fixen
-- [ ] Alle hugo configs durchgehen (minificaition etc)
+- [x] Alle hugo configs durchgehen (minificaition etc)
 - [ ] Font size in code block to big
 - [ ] design auf allen seiten nochmal checken
