@@ -5,3 +5,21 @@
 [build.environment]
   HUGO_VERSION = "0.87.0"
   NODE_VERSION = "16"
+
+[[redirects]]
+  from = "https://hellodevops.netlify.app/*"
+  to = "https://hellodevops.blog/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://hellodevops.netlify.app/*"
+  to = "https://hellodevops.blog/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://hellodevops.blog/*"
+  to = "https://hellodevops.blog/:splat"
+  status = 301
+  force = true
