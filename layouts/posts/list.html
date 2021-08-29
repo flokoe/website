@@ -8,7 +8,7 @@
 
                 <ul>
                     {{ range .Pages }}
-                    <li class="flex flex-col mb-2"><a class="underline text-blue-500" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                    <li class="flex flex-col mb-2"><a class="underline text-blue-600" href="{{ .RelPermalink }}">{{ .Title }}</a><span class="text-base text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
