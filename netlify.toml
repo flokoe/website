@@ -8,18 +8,18 @@
 
 [[redirects]]
   from = "https://hellodevops.netlify.app/*"
-  to = "https://hellodevops.blog/:splat"
+  to = "https://www.hellodevops.blog/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://hellodevops.netlify.app/*"
-  to = "https://hellodevops.blog/:splat"
+  to = "https://www.hellodevops.blog/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://hellodevops.blog/*"
-  to = "https://hellodevops.blog/:splat"
+  from = "http://www.hellodevops.blog/*"
+  to = "https://www.hellodevops.blog/:splat"
   status = 301
   force = true
