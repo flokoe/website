@@ -4,6 +4,7 @@ title = "Hello DevOps"
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
+timeZone = "Europe/Berlin"
 
 [markup.highlight]
   style = "dracula"
