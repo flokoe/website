@@ -42,11 +42,11 @@
         {{ end }}
     </main>
     <footer class="text-base mobile:text-lg max-w-2xl m-auto">
-        <p class="mb-2">Crafted with <span class="text-sm mobile:text-base">❤</span> in Hamburg. Powered by <a class="text-blue-600" href="https://gohugo.io/">Hugo</a>.</p>
+        <p class="mb-2">Crafted with <span class="text-sm mobile:text-base">❤</span> in Hamburg. Powered by <a class="text-blue-600 dark:text-blue-500" href="https://gohugo.io/">Hugo</a>.</p>
         <nav class="mb-4">
             <ul class="flex">
                 {{ range .Site.Menus.footer }}
-                <li class="mr-4"><a class="text-blue-600" href="{{ .URL }}">{{ .Name }}</a></li>
+                <li class="mr-4"><a class="text-blue-600 dark:text-blue-500" href="{{ .URL }}">{{ .Name }}</a></li>
                 {{ end }}
             </ul>
         </nav>
