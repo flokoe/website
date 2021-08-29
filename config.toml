@@ -1,4 +1,4 @@
-baseURL = "https://hellodevops.blog/"
+baseURL = "https://www.hellodevops.blog/"
 languageCode = "en"
 title = "Hello DevOps"
 enableEmoji = true
