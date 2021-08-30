@@ -16,8 +16,8 @@ Mein Hello DevOps blog.
 - [x] enable email
 - [ ] link cvisit color fixen
 - [x] Alle hugo configs durchgehen (minificaition etc)
-- [ ] Font size in code block to big
-- [ ] design auf allen seiten nochmal checken
+- [x] Font size in code block to big
+- [x] design auf allen seiten nochmal checken
 - [x] Google lighthouse für mobile und desktop checken und dark mode
 - [x] netlify config checken
 - [x] plausible analytics aufsetzen
@@ -28,3 +28,5 @@ Mein Hello DevOps blog.
 - [ ] header bild und og image tags
 - [ ] inhaltsverzeichnis
 - [ ] tipps und tricks aus der plausible email einbauen (outging 404, etc)
+- [ ] fix accessiblity of social icons
+- [ ] Remove plausible api token from source code in env 
