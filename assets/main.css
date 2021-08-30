@@ -24,7 +24,7 @@
   }
 
   article h5 {
-    @apply mb-2 font-bold mobile:mb-3
+    @apply mb-2 font-bold mobile:text-xl mobile:mb-3
   }
 
   article p {
@@ -36,11 +36,11 @@
   }
 
   article p code {
-    @apply rounded  bg-gray-300 dark:bg-codedark px-2 py-1
+    @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5
   }
 
   article blockquote {
-    @apply pl-4 border-solid border-l-4 border-gray-300
+    @apply pl-4 border-solid border-l-4 border-gray-400
   }
 
   article .highlight {
@@ -95,7 +95,7 @@
   }
 
   article dd {
-    @apply mb-1 ml-2
+    @apply mb-1 ml-8
   }
 
   article th, article td {
