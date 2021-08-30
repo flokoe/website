@@ -21,13 +21,28 @@
         </section>
         {{ end }}
 
-        {{ $popular_posts := false }}
+        {{ $json_data := getJSON "https://plausible.io/api/v1/stats/breakdown?site_id=hellodevops.blog&period=30d&property=event:page&limit=20" (dict "Authorization" "Bearer HVfwg4jUUvlrUJmVWYq3qs06vCjUJ_ACnJa0Y2arbdg-Hx1Lgma2oUO3Rb6f-e0l") }}
+        {{ $popular_posts := slice }}
+
+        {{ if hugo.IsProduction }}
+            {{ range $json_data.results }}
+                {{ if hasPrefix .page "/posts" }}
+                    {{ $popular_posts = $popular_posts | append . }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ $popular_posts = $json_data.results }}
+        {{ end }}
+
         {{ with $popular_posts }}
         <section  class="mb-8">
             <h2  class="text-2xl mobile:text-3xl font-bold">What Others Find Popular</h2>
             <ul>
-                {{ range first 10 . }}
-                <li class="flex flex-col mb-3"><a class="text-blue-600 dark:text-blue-500" href="{{ .URL }}">{{ .Name }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                {{ range first 10 .}}
+                    {{ $my_str := strings.TrimSuffix "/" .page }}
+                    {{ $my_page := $.Site.GetPage $my_str }}
+
+                    <li class="flex flex-col mb-3"><a class="text-blue-600 dark:text-blue-500" href="{{ $my_page.RelPermalink }}">{{ $my_page.Title }}</a><span class="text-base mobile:text-lg text-mediumemphasis dark:text-darkmediumemphasis"><time datetime="{{ $my_page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $my_page.Date.Format "Jan 2, 2006" }}</time> · {{ $my_page.ReadingTime }} min read</span></li>
                 {{ end }}
             </ul>
         </section>
