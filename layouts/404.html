@@ -7,12 +7,6 @@
     <title>{{ .Title }} | {{ .Site.Title }}</title>
 
     <link rel="canonical" href="{{ .Permalink }}">
-    <meta name="description" content="{{ (or .Description .Summary) }}">
-    <meta property="og:title" content="{{ .Title }}">
-    <meta property="og:description" content="{{ (or .Description .Summary) }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta name="twitter:card" content="summary">
 
     {{ $style := resources.Get "main.css" | resources.PostCSS }}
 
@@ -25,6 +19,7 @@
     {{ if hugo.IsProduction }}
     <script defer data-domain="hellodevops.blog" src="https://plausible.io/js/plausible.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script>plausible("404",{ props: { path: document.location.pathname } });</script>
     {{ end }}
 
     <link rel="icon" href="/favicon.ico">
@@ -43,8 +38,13 @@
         </nav>
     </header>
     <main class="mb-20 max-w-2xl m-auto">
-        {{ block "main" . }}
-        {{ end }}
+        <article>
+            <h1>{{ .Title }}</h1>
+
+            <p>Well, that's unexpected.</p>
+
+            <p><a href="/posts/">Try to search all posts</a></p>
+        </article>
     </main>
     <footer class="text-base mobile:text-lg max-w-2xl m-auto">
         <p class="mb-2">Crafted with <span class="text-sm mobile:text-base">❤</span> in Hamburg. Powered by <a class="text-blue-600 dark:text-blue-500" href="https://gohugo.io/">Hugo</a>.</p>
