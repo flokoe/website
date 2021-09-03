@@ -15,5 +15,6 @@ For those who are wondering what I am currently working on. Here is a simple lis
 
 - Trying to reach self-employment or atleast freelancing.
 - Increase knowledge in DevSec.
+- Focus on mastering MariaDB (aka. road to become this mystic creature called DBA).
 
 Inspired by [Derek Sivers](https://sive.rs/nowff). See [The /now page movement](https://nownownow.com/about).
