@@ -35,3 +35,7 @@ Mein Hello DevOps blog.
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
 - [ ] fix logo on window firefox
+- [ ] dev.to asufüllen.
+- [ ] polywork ausfüllen
+- [ ] xing updaten.
+- [ ] githup page updaten
