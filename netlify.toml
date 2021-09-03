@@ -9,7 +9,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'none'; img-src 'self'; script-src 'self' 'https://plausible.io' 'sha256-MGYxNzRlZDBhMzIyN2ViZTJhMDcxNWZlZjg2NGVmZDMwZWRjMzZlZjA1NzgwYWQxYmUyYjQ0NjVmZDQ1NGFiMQ==' 'sha256-MzI1ZmE3YTE4YWM3YzlkODgyZTUyOWM4OGM4NjhkYTcyYjI4MGYwNWNlODgzZDg2ZjY0Nzk4MDg3YzAxNjA4MA=='; style-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https://plausible.io"
+    Content-Security-Policy = "default-src 'none'; img-src 'self'; script-src 'self' https://plausible.io 'sha256-DxdO0KMifr4qBxX++GTv0w7cNu8FeArRvitEZf1FSrE='; style-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https://plausible.io"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
