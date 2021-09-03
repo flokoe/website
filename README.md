@@ -27,8 +27,9 @@ Mein Hello DevOps blog.
 - [ ] jump to the top
 - [ ] header bild und og image tags
 - [ ] inhaltsverzeichnis
-- [ ] tipps und tricks aus der plausible email einbauen (outging 404, etc)
+- [x] tipps und tricks aus der plausible email einbauen (outging 404, etc)
 - [ ] fix accessiblity of social icons
 - [ ] Remove plausible api token from source code in env
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
+- [ ] fix logo on window firefox
