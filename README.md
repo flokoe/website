@@ -39,3 +39,5 @@ Mein Hello DevOps blog.
 - [ ] polywork ausfüllen
 - [ ] xing updaten.
 - [ ] githup page updaten
+- [ ] auf dev.to in den welcome thread posten.
+- [ ] first post mit mariadb link posten und kleine self plug.
