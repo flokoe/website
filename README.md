@@ -29,6 +29,8 @@ Mein Hello DevOps blog.
 - [ ] inhaltsverzeichnis
 - [x] tipps und tricks aus der plausible email einbauen (outging 404, etc)
 - [ ] fix accessiblity of social icons
+  - https://css-tricks.com/can-make-icon-system-accessible/
+  - https://stackoverflow.com/questions/62703524/how-to-make-an-html-link-displayed-as-an-icon-accessible
 - [ ] Remove plausible api token from source code in env
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
