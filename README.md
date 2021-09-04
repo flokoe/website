@@ -35,9 +35,10 @@ Mein Hello DevOps blog.
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
 - [ ] fix logo on window firefox
-- [ ] dev.to asufüllen.
-- [ ] polywork ausfüllen
-- [ ] xing updaten.
-- [ ] githup page updaten
+- [x] dev.to asufüllen.
+- [x] polywork ausfüllen
+- [x] xing updaten.
+- [x] githup page updaten
 - [ ] auf dev.to in den welcome thread posten.
 - [ ] first post mit mariadb link posten und kleine self plug.
+- [ ] wip emoji in title einbauen
