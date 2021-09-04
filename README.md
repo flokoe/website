@@ -42,3 +42,4 @@ Mein Hello DevOps blog.
 - [ ] auf dev.to in den welcome thread posten.
 - [ ] first post mit mariadb link posten und kleine self plug.
 - [ ] wip emoji in title einbauen
+- [ ] fix different maddings/maxwith for main on pages
