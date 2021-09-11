@@ -6,6 +6,5 @@ wip: true
 menu: favorites
 ---
 
-hwin und wieder I have to give some users or groups permissions witout givim them access to other thisgs
-Often I used Acls but to be hones i never fully understood how they wok. This artike should gui you through
-teh difficulties using ACLS and explain when and how to use them.
+Once in a while I have to give some users or groups permissions to specific files or directories without giving them access to other thisgs. Often I used Acls but to be hones i never fully understood how they wok. This artike should gui you through
+teh difficulties using ACLS and explain how they work and  how to use them.
