@@ -11,7 +11,7 @@ teh difficulties using ACLS and explain how they work and  how to use them.
 
 ## Requirements
 
-I assume basic experience on the commands line.
+I assume basic experience on the commands line and Linux.
 
 ACLs must be supported and enabled(mounted with acl) by the filesystem. As `acl` package is a dependency of systemd and BtrFS, ext, ext3 and ext4 have acls enabled by dfault most modern Linux Distributions should work.
 
@@ -45,4 +45,28 @@ This situation can be tricky as standard linux permissions only allow one user a
 
 This is just a simple example, there are way more complex szenarios which can be solved by ACLs.
 
-Even thou the draft never made it to a release most Unixes implemented the the functionalities.
+Even thou the draft never made it to an official release most Unixes implemented Access Controll Lists.
+
+## Recap the Basics
+
+Before we dive in lets quickly recap how basic permissions on Linux work. Linux gives us three entities for which we can manage permisions separately:
+
+- **U**ser (owner)
+- **G**roup (owner group)
+- **O**ther (everyone else)
+
+For each Entity we can set three permissions (there are more, but for sake of simplicity we will ignore them for now):
+
+- **R**ead (octal 4)
+- **W**rite (octal 2)
+- e**X**ecute (octal 1)
+
+For example:
+
+```bash
+-rw-r--r-- 1 cassidy users 12 Sep 11 13:05 examplefile
+```
+
+Here we can see tha ther owner is the user `cassidy` and the owner group is `users`. Cassidy will be able to read and write t the file, whereas the group and everyone else only can read the content if the file. Furthermore this file is not executable.
+
+## Viewing current ACLs
