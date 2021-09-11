@@ -43,3 +43,5 @@ Mein Hello DevOps blog.
 - [ ] first post mit mariadb link posten und kleine self plug.
 - [ ] wip emoji in title einbauen
 - [ ] fix different maddings/maxwith for main on pages
+- [ ] Disbale line os in code blocks by default
+- [ ] add maring bottom like p to code blocks
