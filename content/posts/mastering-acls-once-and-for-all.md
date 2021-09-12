@@ -63,10 +63,94 @@ For each Entity we can set three permissions (there are more, but for sake of si
 
 For example:
 
-```bash
--rw-r--r-- 1 cassidy users 12 Sep 11 13:05 examplefile
+```plain
+drwxr-xr-x 2 cassidy developer 4096 Sep 11 13:05 exampledir
 ```
 
-Here we can see tha ther owner is the user `cassidy` and the owner group is `users`. Cassidy will be able to read and write t the file, whereas the group and everyone else only can read the content if the file. Furthermore this file is not executable.
+Here we can see tha ther owner is the user `cassidy` and the owner group is `developer`. Cassidy will be able to read and create file in the directory, whereas the members of the group and everyone else only can read/list the content of the directory.
 
 ## Viewing current ACLs
+
+Now that we reviewed how basic permissions work, lets have a look we can work with Acess Controll Lists.
+
+First, hoe can we identify files that have ACLs? Luckily `ls` knows about ACLs and indicated what files ave ACLs by appending a `+` to the permissions:
+
+```plain
+drwxr-xr-x+ 2 cassidy developer 4096 Sep 11 13:05 exampledir
+```
+
+Now that we know that this file has ACLs, lets display all ACLs for this file. For this we can use the `getfacl` command:
+
+```plain
+[root@lab docroot]# getfacl exampledir
+# file: exampledir
+# owner: cassidy
+# group: developer
+user::rwx
+user:finley:r-x
+group::r-x
+mask::r-x
+other::r-x
+default:user::rwx
+default:user:finley:r-x
+default:group::r-x
+default:mask::r-x
+default:other::r-
+```
+
+Woah hey that a lot to digest, let's break it down.
+
+## How ACLs work
+
+As mentioned above ACLs are a superset of basic Linux permissions so they are mirrored in the output of `getfalc`.
+
+The first block, the first three lines, display the filename, the owner and the owner group:
+
+```plain
+# file: exampledir
+# owner: cassidy
+# group: developer
+```
+
+The next block spevidy individual user rights. In this example we can see the user `finley` has read and access rights for this directory. The first line without a user name, `user::rwx`, mirrors the permissions fo the owner, in thi case `cassidy:
+
+```plain
+user::rwx
+user:finley:r-x
+```
+
+In the third block come the group permissions. in this case there is only the permissions of the owner gorup, but there could be a line like `group:management:r-x` which would allow the `management` group to access the contents of this driectory:
+
+```plain
+group::r-x
+```
+
+Next we have the mask Block. Masks are a bit triyk to understand and we will cover the later in detail. For now jus know that Masks are used to limit access right
+
+```plain
+mask::r-x
+```
+
+Next up there is the other block. It works like all other block and specify the permissoins for everyone else:
+
+```plain
+other::r-x
+```
+
+Lastly, we have the defaults block. This block exists only on directories and inlcued all other blocks mentiond before. Here wen can specify defaults for the different enteties like users, groups, masks, etc:
+
+```plains
+default:user::rwx
+default:user:finley:r-x
+default:group::r-x
+default:mask::r-x
+default:other::r-
+```
+
+### Precedens of ACLs
+
+### Default ACLs
+
+### Masks explained
+
+## Create and Remove ACLs
