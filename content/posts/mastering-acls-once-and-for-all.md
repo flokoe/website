@@ -207,3 +207,13 @@ It is import that after the option `-m` the specification follows immeadiately. 
 `-mR` would result in an error!
 
 {{% tip %}}If you want to apply read only permissions for files and directories recursively you can use `rX`. A capital `X`only applies execution rights to directories. So all files would get `r` permissions and all direcotires would become `rx` permissions.{{% /tip %}}
+
+### Creating default permissions for new files
+
+If you want that new created files automatically get certain permissions, you can specify default permissions on the parent directory:
+
+```plain
+setfacl -dm u:finely:rwx exampledir
+```
+
+This only works for diretories. All new files and directories in `exampledir` will inherit these permissions (new directories will inherit the default entries as well).
