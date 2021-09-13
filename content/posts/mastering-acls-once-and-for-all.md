@@ -1,12 +1,12 @@
 ---
-title: "Mastering Linux Access Lists (ACLs) once and for all + cheat sheet"
+title: "Mastering Linux Access Lists (ACLs) once and for all"
 date: 2021-09-03T19:24:43+02:00
 draft: true
 wip: true
 menu: favorites
 ---
 
-Once in a while I have to give some users or groups permissions to specific files or directories without giving them access to other thisgs. Often I used Acls but to be hones i never fully understood how they wok. This artike should gui you through
+Once in a while I have to give some users or groups permissions to specific files or directories without giving them access to other thisgs. Often I used Acls but to be hones i never fully understood how they wok, as they are fairly complex topic. This artike should gui you through
 teh difficulties using ACLS and explain how they work and  how to use them.
 
 ## Requirements
@@ -139,7 +139,7 @@ other::r-x
 
 Lastly, we have the defaults block. This block exists only on directories and inlcued all other blocks mentiond before. Here wen can specify defaults for the different enteties like users, groups, masks, etc:
 
-```plains
+```plain
 default:user::rwx
 default:user:finley:r-x
 default:group::r-x
@@ -147,10 +147,63 @@ default:mask::r-x
 default:other::r-
 ```
 
+### Understanding Masks and effective rights
+
+After looking at hte output, lets address ptorbally the most ocnfusing thigs about Access Controll Lists: Masks and efekctive rights.
+
+
+
 ### Precedens of ACLs
 
 ### Default ACLs
 
-### Masks explained
+## Working with ACL entries
 
-## Create and Remove ACLs
+At this point we should have a good understanding of how Access Controll Lists work. Finally let's use modify ACLs. Fortunately this is pretty straight forward. To set or remove ACLS use `setfacl` command. The syntax is always
+
+```plain
+setfacl [option] [action/specification] file
+```
+
+The specification are separated by a colon in three sections: the object type, the associated object and its permission. For example:
+
+```plain
+u:finley:rwx
+```
+
+User type can be any entity you can mange with `chmod` plus te mask and is defined by the first character of ther name (**u**ser, **g**roup, **o**ther, **m**ask). In this case it indicated that we want to modify a user object. Following the type comes the name or ID of the object. At the end come the permissions, which can be specified as octal numbers or characters.
+
+You can modify multiple entries simoulaniously by separteing specifactions with a comma:
+
+```plain
+u:finley:rwx,g:accounting:rx
+```
+
+If setfacl is used on a file system which does not support ACLs, setfacl will try to refelct the desired permsions via the basic permission and out put an error. Beaware that this could possible result in unexpected outcomes. 
+
+Here are some common options for `setfacl` but I will explain them in detail in the following sections.
+
+{{% tip %}}If you are unsure if your ACL results in the expected outcome you can use the `--test` option to display the new ACL entries without changing the current entries.{{% /tip %}}
+
+| OPTION | DESCRIPTION |
+| --- | --- |
+| `-m` | Modify or add an ACL entry (always needs to be the last option). |
+| `-d` | Sets specified mask as default mask (Only works on directories). |
+| `-R` | Recursively applies changes. |
+| `-x` | Removes specified entry. |
+| `-b` | Removes all entries. |
+| `-n` | Prevents the mask from bein recalculated. |
+
+### Creating/Modifiying entries
+
+To create or modify ACLs use the modify option `-m` and followi it with your specifaction explained above. If the same object exists the permissions will be overwritten. For example to add or change the permissions for the user `finley` to `rwx` execute the following:
+
+```plain
+setfacl -m u:finely:rwx exampledir
+```
+
+It is import that after the option `-m` the specification follows immeadiately. So if you want to change the permissions recursevly you woul have to wirte `-Rm`.
+
+`-mR` would result in an error!
+
+{{% tip %}}If you want to apply read only permissions for files and directories recursively you can use `rX`. A capital `X`only applies execution rights to directories. So all files would get `r` permissions and all direcotires would become `rx` permissions.{{% /tip %}}
