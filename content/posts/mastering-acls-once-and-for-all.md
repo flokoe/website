@@ -216,4 +216,19 @@ If you want that new created files automatically get certain permissions, you ca
 setfacl -dm u:finely:rwx exampledir
 ```
 
-This only works for diretories. All new files and directories in `exampledir` will inherit these permissions (new directories will inherit the default entries as well).
+This only works for diretories. All new files and directories in `exampledir` will inherit these permissions (new directories will inherit the default entries as well). Unfortunately thi shas no effects on files that are copied.
+
+### Removing entries
+
+## Conclusion
+
+You have now learned how to Linux Access Controll Lists work and how to use them. I hope it helps to solve complex permission structure more confidently and prevent any data leaks.
+
+If you want to read more about ACLs I recommend the article from Andreas Grünbacher, who was one of the authors of the POSIX draft for ACLs. Not to mention the man pages for `acl`, `getfacl` and `setfacl`:
+
+- [POSIX Access Control Lists on Linux by Andreas Grünbacher](https://www.usenix.org/legacy/publications/library/proceedings/usenix03/tech/freenix03/full_papers/gruenbacher/gruenbacher_html/main.html)
+- [acl - Linux man page](https://linux.die.net/man/5/acl)
+- [getfacl - Linux man page](https://linux.die.net/man/1/getfacl)
+- [setfacl - Linux man page](https://linux.die.net/man/1/setfacl)
+
+If you found any mistakes or want to say hi, send me message.
