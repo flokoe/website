@@ -1,7 +1,7 @@
 baseURL = "https://www.hellodevops.blog/"
 languageCode = "en"
 title = "Hello DevOps"
-enableEmoji = true
+enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
 timeZone = "Europe/Berlin"
