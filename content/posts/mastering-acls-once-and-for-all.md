@@ -220,11 +220,33 @@ This only works for diretories. All new files and directories in `exampledir` wi
 
 ### Removing entries
 
+To remove single entries use the `-x` option instead of `-m`:
+
+```plain
+setfacl -x g:accounting exampledir
+```
+
+Like with the `-m` option you can use the `-d` switch to remove single default entries: `-dx`.
+
+To remove all default entries use the `-k` option:
+
+```plain
+setfacl -k exampledir
+```
+
+If you really want to remove all ACL entries you can nuke them with the `-b` optione, but be careful when to use it!
+
+```plain
+setfacl -b exampledir
+```
+
+Furthermore, be aware tha unless you use the `-n` switch the mask will still be recalculated (). So check for possible breaking changes!
+
 ## Conclusion
 
 You have now learned how to Linux Access Controll Lists work and how to use them. I hope it helps to solve complex permission structure more confidently and prevent any data leaks.
 
-If you want to read more about ACLs I recommend the article from Andreas Grünbacher, who was one of the authors of the POSIX draft for ACLs. Not to mention the man pages for `acl`, `getfacl` and `setfacl`:
+If you want to read more about ACLs I recommend the article from Andreas Grünbacher, who was one of the authors of the draft for POSIX ACLs. Not to mention the man pages for `acl`, `getfacl` and `setfacl`:
 
 - [POSIX Access Control Lists on Linux by Andreas Grünbacher](https://www.usenix.org/legacy/publications/library/proceedings/usenix03/tech/freenix03/full_papers/gruenbacher/gruenbacher_html/main.html)
 - [acl - Linux man page](https://linux.die.net/man/5/acl)
