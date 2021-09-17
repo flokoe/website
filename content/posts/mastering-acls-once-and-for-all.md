@@ -151,7 +151,48 @@ default:other::r-
 
 After looking at hte output, lets address ptorbally the most ocnfusing thigs about Access Controll Lists: Masks and efekctive rights.
 
+To ensure that the standard permissions still work on systems with ACLs the working group agreed on a complex masking mechanism.
 
+To remove some of the complexity lets start with five simple statements that always will be true:
+
+1. If the ACL has no MASK entry the the ACL group will coressponent to the owner group.
+2. If the ACL has named user or groups it will have a MASK entry.
+3. If the ACL has a mask entry the permissions of the owner group will correspondent to the MASK entry.
+4. UNless otherwise stated permission of the mask entry will be recalculated on every change and equal to the union of all permissions that are affected by an ACL.
+5. Masks denote maximum access rights that can be granted by an named user entry, names group entry or the owner group.
+
+Lets have a closer look at each statement.essponent to the owner group
+
+Th first is pretty sefl explanatory. As long as there is no mask entry, the owner group permissions and the permissions for the `group::` entry will be the same. Changes with `chmod` to the owner group will be reflected in the `group::` entry and the other way around.
+
+The second statemnet states that as soon as you add named user or group entries setfacl will automatically add an mask entry if it ndoes not exist.
+
+The third statement is where it gets interesting. If a mask entry exists the meaninf of the owner group will change. The woner group now equals to the mask entry. Chnages with `chmod` to the woner group will change the permission of th emask entry. Changes via stefalc to the mask entry changes the permissions of the owner group.
+
+But how can we manage the permissions of the owner group without changing hte mask? Dont worry, you can chnage permissions for the owner group via the `group::` entry.
+
+Thanks to the fourth satement we know the the permissions of the mask can chnage and always equals to the union of permissions from user, group etc.
+
+To prevent the mask to recalculate on change use `-n` option.
+
+The last statement lets us know, and this is important, that you cant grant more permissions than specified in the mask for users and group entries. This is what causes the so called effective rights.
+
+For example if we add the following acl and mask:
+
+```plain
+user:finley:rwx
+mask::rx
+```
+
+The user finley only has thr rights `rx`, as `w` is not allowed by the mask.
+
+Like every other entry we can change the mask explicitly:
+
+```plain
+setfacl -m m:rw
+```
+
+BUt be aware unless you use the `-n` on the next change to prevent the mask to recalculate you mask will be overwritten.
 
 ### Precedens of ACLs
 
@@ -179,7 +220,7 @@ You can modify multiple entries simoulaniously by separteing specifactions with 
 u:finley:rwx,g:accounting:rx
 ```
 
-If setfacl is used on a file system which does not support ACLs, setfacl will try to refelct the desired permsions via the basic permission and out put an error. Beaware that this could possible result in unexpected outcomes. 
+If setfacl is used on a file system which does not support ACLs, setfacl will try to refelct the desired permsions via the basic permission and out put an error. Beaware that this could possible result in unexpected outcomes.
 
 Here are some common options for `setfacl` but I will explain them in detail in the following sections.
 
