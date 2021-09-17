@@ -147,6 +147,8 @@ default:mask::r-x
 default:other::r-
 ```
 
+ACLs with only the three base entries `user::`, `group::` and `other::` are called minimal ACL. ACLs containing named entries are called extended ACLs.
+
 ### Understanding Masks and effective rights
 
 After looking at hte output, lets address ptorbally the most ocnfusing thigs about Access Controll Lists: Masks and efekctive rights.
