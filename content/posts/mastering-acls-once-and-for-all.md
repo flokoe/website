@@ -198,7 +198,19 @@ BUt be aware unless you use the `-n` on the next change to prevent the mask to r
 
 ### Precedens of ACLs
 
-### Default ACLs
+One last thing to understand is the order in which the permissions are checked. The following order is used and the first match determines the acces to the resource:
+
+1. File owner.
+2. Named user entries.
+3. owner group.
+4. Named group entries
+5. other
+
+Thi is important, as write access will be diend if a names user entry with `r` exixsts even when there is a mathing named group entry with correct permissions:
+
+```plain
+permissions denied
+```
 
 ## Working with ACL entries
 
