@@ -87,15 +87,15 @@ Now that we know that this file has ACLs, lets display all ACLs for this file. F
 # owner: cassidy
 # group: developer
 user::rwx
-user:finley:r-x
+user:finley:rwx            #effective:r-x
 group::r-x
 mask::r-x
-other::r-x
+other::---
 default:user::rwx
-default:user:finley:r-x
+default:user:finley:rwx    #effective:r-x
 default:group::r-x
 default:mask::r-x
-default:other::r-
+default:other::---
 ```
 
 Woah hey that's a lot to digest, let's break it down.
@@ -117,7 +117,7 @@ The next block specifies individual user rights. In this example we can see the 
 
 ```plain
 user::rwx
-user:finley:r-x
+user:finley:rwx
 ```
 
 In the third block comes the group permissions. in this case there is only the permissions of the owner group, but there could be a line like `group:management:r-x` which would allow the `management` group to access the contents of this driectory:
@@ -126,7 +126,7 @@ In the third block comes the group permissions. in this case there is only the p
 group::r-x
 ```
 
-Next we have the mask Block. Masks are a bit triyk to understand and we will cover the later in detail. For now jus know that Masks are used to limit access right
+Next we have the mask Block. Masks are a bit triyk to understand and we will cover the later in detail. For now jus know that Masks are used to limit access right and the comments satting `#effective:r-x` are connected to the mask.
 
 ```plain
 mask::r-x
@@ -135,7 +135,7 @@ mask::r-x
 Next up there is the other block. It works like all other block and specify the permissoins for everyone else:
 
 ```plain
-other::r-x
+other::---
 ```
 
 <!-- vllt etwas genauer, das e snur für neue files and rirectories gilt -->
@@ -143,10 +143,10 @@ Lastly, we have the defaults block. This block exists only on directories and in
 
 ```plain
 default:user::rwx
-default:user:finley:r-x
+default:user:finley:rwx    #effective:r-x
 default:group::r-x
 default:mask::r-x
-default:other::r-
+default:other::---
 ```
 
 ACLs with only the three base entries `user::`, `group::` and `other::` are called minimal ACL. ACLs containing named entries are called extended ACLs.
@@ -186,7 +186,7 @@ For example if we add the following acl and mask:
 
 ```plain
 user:finley:rwx
-mask::rx
+mask::r-x
 ```
 
 The user finley only has thr rights `rx`, as `w` is not allowed by the mask.
@@ -209,10 +209,24 @@ One last thing to understand is the order in which the permissions are checked. 
 4. Named group entries
 5. other
 
-Thi is important, as write access will be diend if a names user entry with `r` exixsts even when there is a mathing named group entry with correct permissions:
+Thi is important, as write access will be diend if a names user entry with `r` exixsts even when the user is a member of matching named group entry with correct permissions:
 
 ```plain
-permissions denied
+[root@lab docroot]# getfacl exampledir
+# file: exampledir
+# owner: cassidy
+# group: developer
+user::rwx
+user:finley:r-x
+group::rwx
+mask::rwx
+other::r-x
+
+[finley@lab docroot]$ groups
+finley developer
+
+[finley@lab docroot]$ touch exampledir/testfile
+touch: cannot touch 'exampledir/testfile': Permission denied
 ```
 
 ## Working with ACL entries
