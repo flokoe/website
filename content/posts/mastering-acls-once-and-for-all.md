@@ -6,16 +6,16 @@ wip: true
 menu: favorites
 ---
 
-Once in a while I have to give some users or groups permissions to specific files or directories without giving them access to other thisgs. Often I used Acls but to be hones i never fully understood how they wok, as they are fairly complex topic. This artike should gui you through
-teh difficulties using ACLS and explain how they work and  how to use them.
+Once in a while I have to give some users or groups permissions to specific files or directories without giving them access to other things. Often I used ACLs but to be honest I never fully understood how they wok, as they are fairly complex topic. This article should guide you through
+the difficulties using ACLs and explain how they work and how to use them.
 
 ## Requirements
 
 I assume basic experience on the commands line and Linux.
 
-ACLs must be supported and enabled(mounted with acl) by the filesystem. As `acl` package is a dependency of systemd and BtrFS, ext, ext3 and ext4 have acls enabled by dfault most modern Linux Distributions should work.
+ACLs must be supported and enabled by the filesystem (mounted with acl option). As the `acl` package is a dependency of systemd and BtrFS, ext2, ext3 and ext4 have ACLs enabled by default most modern Linux distributions should work.
 
-If you are unsure if acls are enbaled, you can check this with the following command
+If you are unsure if ACLs are enbaled, you can check this with the following command
 
 ```bash
 tune2fs -l /dev/sdXY | grep "Default mount options:"
@@ -33,23 +33,23 @@ To set the default mount options for a filesystem use the `tune2fs` utility:
 tune2fs -o acl /dev/sdXY
 ```
 
-## Waht exactly are ACLs
+## What exactly are ACLs
 
-Access Controll Lists (ACLs) allow for more fine-grained and flexible permissions for files and directories.
+Access Controll Lists allow for more fine-grained and flexible permissions for files and directories.
 
-Based on a draft for POSIX 1003.1e ACLs are kind of a Superset of standard linux permissions and should extend them without braking them.
+Based on a draft for POSIX 1003.1e ACLs are kind of a superset of standard linux permissions and should extend them without breaking them.
 
-They are especially useful if you have complex permission requqirements. For example, you got a docroot of your Webapplication which is owned by `www-data` user (User of the webserver) and belongs to the group `developer`. Both have write access. No some Product owner needs read acces to log file of the appplication. Now what? They dont have the same `uid` as the `www-data` user and adding them to the `developer` groups sound like a bad Idea too.
+They are especially useful if you have complex permission requirements. For example, you got a docroot of your Webapplication which is owned by `www-data` user (User of the webserver) and belongs to the group `developer`. Both have write access. The new product owner needs read acces to log file of the appplication. Now what? She does not have the same `uid` as the `www-data` user and adding her to the `developer` group would be too permissive.
 
-This situation can be tricky as standard linux permissions only allow one user and one group, sure, you could make everythin read only to everyone but that would be a bad idea. With ACLs you can solve this situation and add the specificy suer with read only permissions to the docroot.
+This situation can be tricky as standard linux permissions only allow one user and one group, sure, you could make everythin read only to everyone but that would be a bad idea. With ACLs you can solve this situation and add the specificy user with read only permissions to the docroot.
 
-This is just a simple example, there are way more complex szenarios which can be solved by ACLs.
+This is just a simple example, there are way more complex scenarios which can be solved by ACLs.
 
-Even thou the draft never made it to an official release most Unixes implemented Access Controll Lists.
+Even though the draft never made it to an official release most Unixes implemented Access Controll Lists.
 
 ## Recap the Basics
 
-Before we dive in lets quickly recap how basic permissions on Linux work. Linux gives us three entities for which we can manage permisions separately:
+Before we dive in let's quickly recap how basic permissions on Linux work. Linux gives us three entities for which we can manage permisions separately:
 
 - **U**ser (owner)
 - **G**roup (owner group)
@@ -67,13 +67,13 @@ For example:
 drwxr-xr-x 2 cassidy developer 4096 Sep 11 13:05 exampledir
 ```
 
-Here we can see tha ther owner is the user `cassidy` and the owner group is `developer`. Cassidy will be able to read and create file in the directory, whereas the members of the group and everyone else only can read/list the content of the directory.
+Here we can see that the owner is the user `cassidy` and the owner group is `developer`. Cassidy will be able to read and create files in the directory, whereas the members of the group and everyone else only can read/list the content of the directory.
 
 ## Viewing current ACLs
 
-Now that we reviewed how basic permissions work, lets have a look we can work with Acess Controll Lists.
+Now that we reviewed how basic permissions work, lets have a look how we can work with Acess Controll Lists.
 
-First, hoe can we identify files that have ACLs? Luckily `ls` knows about ACLs and indicated what files ave ACLs by appending a `+` to the permissions:
+First, how can we identify files that have ACLs? Luckily `ls` knows about ACLs and indicates what files have ACLs by appending a `+` to the permissions:
 
 ```plain
 drwxr-xr-x+ 2 cassidy developer 4096 Sep 11 13:05 exampledir
@@ -98,13 +98,14 @@ default:mask::r-x
 default:other::r-
 ```
 
-Woah hey that a lot to digest, let's break it down.
+Woah hey that's a lot to digest, let's break it down.
 
 ## How ACLs work
 
+<!-- mirrored might be unclear -->
 As mentioned above ACLs are a superset of basic Linux permissions so they are mirrored in the output of `getfalc`.
 
-The first block, the first three lines, display the filename, the owner and the owner group:
+The first three lines, display the filename, the owner and the owner group:
 
 ```plain
 # file: exampledir
@@ -112,14 +113,14 @@ The first block, the first three lines, display the filename, the owner and the 
 # group: developer
 ```
 
-The next block spevidy individual user rights. In this example we can see the user `finley` has read and access rights for this directory. The first line without a user name, `user::rwx`, mirrors the permissions fo the owner, in thi case `cassidy:
+The next block specifies individual user rights. In this example we can see the user `finley` has read and execute rights for this directory. The first line without a user name, `user::rwx`, equals to the permissions fo the owner, in this case `cassidy:
 
 ```plain
 user::rwx
 user:finley:r-x
 ```
 
-In the third block come the group permissions. in this case there is only the permissions of the owner gorup, but there could be a line like `group:management:r-x` which would allow the `management` group to access the contents of this driectory:
+In the third block comes the group permissions. in this case there is only the permissions of the owner group, but there could be a line like `group:management:r-x` which would allow the `management` group to access the contents of this driectory:
 
 ```plain
 group::r-x
@@ -137,6 +138,7 @@ Next up there is the other block. It works like all other block and specify the 
 other::r-x
 ```
 
+<!-- vllt etwas genauer, das e snur für neue files and rirectories gilt -->
 Lastly, we have the defaults block. This block exists only on directories and inlcued all other blocks mentiond before. Here wen can specify defaults for the different enteties like users, groups, masks, etc:
 
 ```plain
@@ -153,6 +155,7 @@ ACLs with only the three base entries `user::`, `group::` and `other::` are call
 
 After looking at hte output, lets address ptorbally the most ocnfusing thigs about Access Controll Lists: Masks and efekctive rights.
 
+<!-- nicht deutlich genug, konkreter formulieren -->
 To ensure that the standard permissions still work on systems with ACLs the working group agreed on a complex masking mechanism.
 
 To remove some of the complexity lets start with five simple statements that always will be true:
@@ -163,11 +166,11 @@ To remove some of the complexity lets start with five simple statements that alw
 4. UNless otherwise stated permission of the mask entry will be recalculated on every change and equal to the union of all permissions that are affected by an ACL.
 5. Masks denote maximum access rights that can be granted by an named user entry, names group entry or the owner group.
 
-Lets have a closer look at each statement.essponent to the owner group
+Lets have a closer look at each statement.
 
-Th first is pretty sefl explanatory. As long as there is no mask entry, the owner group permissions and the permissions for the `group::` entry will be the same. Changes with `chmod` to the owner group will be reflected in the `group::` entry and the other way around.
+Th first is pretty sefl explanatory. As long as there is no mask entry, the owner group permissions and the permissions for the `group::` entry will be the same. Changes to the owner group will be reflected in the `group::` entry and the other way around.
 
-The second statemnet states that as soon as you add named user or group entries setfacl will automatically add an mask entry if it ndoes not exist.
+The next one states that as soon as you add named user or group entries setfacl will automatically add an mask entry if it ndoes not exist.
 
 The third statement is where it gets interesting. If a mask entry exists the meaninf of the owner group will change. The woner group now equals to the mask entry. Chnages with `chmod` to the woner group will change the permission of th emask entry. Changes via stefalc to the mask entry changes the permissions of the owner group.
 
@@ -220,13 +223,20 @@ At this point we should have a good understanding of how Access Controll Lists w
 setfacl [option] [action/specification] file
 ```
 
-The specification are separated by a colon in three sections: the object type, the associated object and its permission. For example:
+The specification is separated by a colon in three sections: the object type, the associated object and its permission. For example:
 
 ```plain
 u:finley:rwx
 ```
 
-User type can be any entity you can mange with `chmod` plus te mask and is defined by the first character of ther name (**u**ser, **g**roup, **o**ther, **m**ask). In this case it indicated that we want to modify a user object. Following the type comes the name or ID of the object. At the end come the permissions, which can be specified as octal numbers or characters.
+<!-- be more precise -->
+Object type can be any entity you can mange with `chmod` plus te mask and is defined by the first character of ther name (**u**ser, **g**roup, **o**ther, **m**ask). In this case it indicated that we want to modify a user object. Following the type comes the name or ID of the object. At the end come the permissions, which can be specified as octal numbers or characters.
+
+If there is no name in between the first and second color you will change the permissions for the base permissions (owner, owner gorup, other):
+
+```plain
+u::rwx
+```
 
 You can modify multiple entries simoulaniously by separteing specifactions with a comma:
 
