@@ -55,7 +55,8 @@ Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erf&uuml;llu
 
 Wir setzen folgenden Hoster ein:
 
-GitHub
+- Netlify
+- GitHub
 
 ## 3. Allgemeine Hinweise und Pflicht&shy;informationen
 

@@ -113,4 +113,8 @@
   article pre, article code {
     @apply overflow-auto
   }
+
+  article .tip {
+    @apply bg-green-200 rounded p-4
+  }
 }
