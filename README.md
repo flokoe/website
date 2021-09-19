@@ -8,7 +8,7 @@ Mein Hello DevOps blog.
 - [x] social media tags
 - [ ] copy to clipboard for code
 - [ ] sort table by column
-- [ ] make tables more beatiful
+- [x] make tables more beatiful
 - [ ] pagination on posts page
 - [ ] enlarge images
 - [ ] use different sizes of images for preview and enlarge
@@ -39,9 +39,12 @@ Mein Hello DevOps blog.
 - [x] polywork ausfüllen
 - [x] xing updaten.
 - [x] githup page updaten
-- [ ] auf dev.to in den welcome thread posten.
 - [ ] first post mit mariadb link posten und kleine self plug.
 - [ ] wip emoji in title einbauen
 - [ ] fix different maddings/maxwith for main on pages
 - [ ] Disbale line os in code blocks by default
 - [ ] add maring bottom like p to code blocks
+- [ ] Add netlify to privacy
+- [ ] Fix line hight in code/pre (code blocks)
+- [ ] no whitespace wrap for code (with overflow auto on words)
+- [ ] mehr platz in flists

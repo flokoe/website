@@ -56,7 +56,7 @@
   }
 
   article table {
-    @apply block overflow-auto mb-5 mobile:mb-6
+    @apply block overflow-auto mb-5 mobile:mb-7
   }
 
   article td:first-child pre {
