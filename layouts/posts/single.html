@@ -2,7 +2,9 @@
     <article>
         {{ $image := path.Join .RelPermalink "/thumbnail.webp" }}
         {{ if (fileExists $image) }}
-        <img class="rounded-lg mb-8" src="thumbnail.webp" alt="{{ .Title }}">
+        {{ $image := path.Join "/content" .RelPermalink "/thumbnail.webp" }}
+        {{ $image := imageConfig $image }}
+        <img src="thumbnail.webp" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}" class="rounded-lg mb-8" >
         {{ end }}
         <h1>{{ .Title }}</h1>
         <p class="mb-8 text-mediumemphasis dark:text-darkmediumemphasis">
