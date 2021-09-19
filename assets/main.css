@@ -35,7 +35,7 @@
     @apply text-blue-600 dark:text-blue-500
   }
 
-  article p code {
+  article p code, article table code {
     @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5
   }
 
@@ -56,7 +56,7 @@
   }
 
   article table {
-    @apply block overflow-auto mb-5
+    @apply block overflow-auto mb-5 mobile:mb-6
   }
 
   article td:first-child pre {
@@ -98,12 +98,12 @@
     @apply mb-1 ml-8
   }
 
-  article th, article td {
-    @apply border-solid border border-gray-300 dark:border-gray-700 py-1 px-2
+  article th {
+    @apply bg-gray-100 dark:bg-gray-800 text-left py-2 px-3 border-solid border border-gray-300 dark:border-gray-700
   }
 
-  article tr:nth-child(2n) {
-    @apply bg-gray-200 dark:bg-gray-800
+  article td {
+    @apply border-solid border border-gray-300 dark:border-gray-700 py-1 px-2
   }
 
   article figcaption {
