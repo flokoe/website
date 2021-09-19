@@ -36,7 +36,7 @@
   }
 
   article p code, article table code {
-    @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5
+    @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5 whitespace-nowrap
   }
 
   article blockquote {
@@ -44,15 +44,11 @@
   }
 
   article .highlight {
-    @apply mb-4
-  }
-
-  article .highlight > div, article .highlight table {
-    @apply rounded
+    @apply mb-5 mobile:mb-6
   }
 
   article pre {
-    @apply p-4
+    @apply p-4 rounded
   }
 
   article table {
@@ -78,6 +74,10 @@
   article ol,
   article ul {
     @apply pl-8
+  }
+
+  article li {
+    @apply mb-1
   }
 
   article ol,
@@ -108,5 +108,9 @@
 
   article figcaption {
     @apply text-mediumemphasis dark:text-darkmediumemphasis text-base mobile:text-lg
+  }
+
+  article pre, article code {
+    @apply overflow-auto
   }
 }

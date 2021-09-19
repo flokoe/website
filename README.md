@@ -25,7 +25,7 @@ Mein Hello DevOps blog.
 - [x] security bei mozilla und ssllabs checken
 - [x] cache control
 - [ ] jump to the top
-- [ ] header bild und og image tags
+- [x] header bild und og image tags
 - [ ] inhaltsverzeichnis
 - [x] tipps und tricks aus der plausible email einbauen (outging 404, etc)
 - [ ] fix accessiblity of social icons
@@ -42,9 +42,9 @@ Mein Hello DevOps blog.
 - [ ] first post mit mariadb link posten und kleine self plug.
 - [ ] wip emoji in title einbauen
 - [ ] fix different maddings/maxwith for main on pages
-- [ ] Disbale line os in code blocks by default
-- [ ] add maring bottom like p to code blocks
-- [ ] Add netlify to privacy
+- [x] Disbale line os in code blocks by default
+- [x] add maring bottom like p to code blocks
+- [x] Add netlify to privacy
 - [ ] Fix line hight in code/pre (code blocks)
-- [ ] no whitespace wrap for code (with overflow auto on words)
-- [ ] mehr platz in flists
+- [x] no whitespace wrap for code (with overflow auto on words)
+- [x] mehr platz in flists
