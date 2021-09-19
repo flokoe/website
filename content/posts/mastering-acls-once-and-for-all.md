@@ -25,7 +25,7 @@ If enabled, the output should look something like this:
 Default mount options:    user_xattr acl
 ```
 
-To set the default mount options for a filesystem, use the `tune2fs` utility:
+To set `acl` as a default mount option for a filesystem, use the `tune2fs` utility:
 
 ```bash
 tune2fs -o acl /dev/sdXY
@@ -37,7 +37,7 @@ Access Control Lists allow for more fine-grained and flexible permissions for fi
 
 They are handy if you have complex permission requirements. For example, you got a docroot of your Web application owned by the `www-data` user and the `developer` group. The new product owner needs read access to the log files of the application. Now what? She does not have the same UID as the `www-data` user, and adding her to the `developer` group would be too permissive.
 
-This situation can be tricky as standard Linux permissions only allow one user and one group. Sure, you could make everything read-only to everyone, but that would be a bad idea. With ACLs, you can solve this situation and add a specific user with read-only permissions to the docroot.
+This situation can be tricky as standard Linux permissions only allow one user and one group. Sure, you could make everything read-only to everyone, but that would be a bad idea. You can solve this situation with ACLs by adding a new user with read-only permissions to the docroot.
 
 The situation above is just a simple example, and there are way more complex scenarios that ACLs can solve.
 
@@ -73,7 +73,7 @@ After we reviewed how basic permissions work, let's look at identifying files wi
 drwxr-x---+ 2 cassidy developer 4096 Sep 11 13:05 exampledir
 ```
 
-Now that we know that this file has ACLs let's display all ACLs for this file. For this, we can use the `getfacl` command:
+Now that we know that this file has ACLs let's display all ACLs by using the `getfacl` command:
 
 ```plain
 [root@lab docroot]# getfacl exampledir
@@ -117,7 +117,7 @@ The third block contains group permissions. In this case, there are only the per
 group::r-x
 ```
 
-Next, we have the mask Block. Masks can be challenging, and we will cover them later in detail. For now, keep in mind that masks limit access rights, and the comments like `#effective:r-x` display the actual permissions.
+Next, we have the mask block. Masks can be challenging, and we will cover them later in detail. For now, keep in mind that masks limit access rights, and the comments like `#effective:r-x` display the actual permissions.
 
 ```plain
 mask::r-x
@@ -150,7 +150,7 @@ Standard permissions can't reflect complex ACLs. Therefore the working group agr
 To better understand masks, let's start with five simple statements that always will be true:
 
 1. If the ACL has no mask entry, the permissions of the owner group will correspond to the ACL group.
-2. If the ACL has named users or groups, it will have a MASK entry.
+2. If the ACL has named users or groups, it will have a mask entry.
 3. If the ACL has a mask entry, the permissions of the owner group will correspond to the mask entry.
 4. Unless otherwise stated, the mask entry's permissions will be the union of all permissions affected by an ACL and recalculate on every change.
 5. Masks denote maximum access rights that can be granted by a named user entry, named group entry, or the owner group.
@@ -159,7 +159,7 @@ The first statement is pretty self-explanatory. As long as there is no mask, the
 
 The next one states that as soon as you add named user or group entries, `setfacl` will automatically add a mask entry if it does not exist.
 
-The third statement is where it gets interesting. If a mask exists, the meaning of the owner group will change. The owner group will equal the mask entry. Changes with `chmod` to the owner group will change the mask entry. Changes via `setfacl` to the mask entry will change the owner group.
+The third statement is where it gets interesting. If a mask exists, the meaning of the owner group will change. The owner group will equal the mask entry. Changes with `chmod` to the owner group will change the mask entry. Changes via `setfacl` to the mask entry will change the owner group's permissions.
 
 But how can we manage the permissions of the owner group without changing the mask? Don't worry. You can change permissions for the owner group via the `group::` entry.
 
@@ -186,7 +186,7 @@ setfacl -m m:rw
 
 Unless you use `-n` to prevent the mask from recalculating, all following changes will overwrite your mask again.
 
-### Precedens of ACLs
+### Precedence of ACLs
 
 One last thing to understand is the following order in which the algorithm checks for permission:
 
@@ -235,7 +235,7 @@ A colon separates the specification into three sections: object type, associated
 | Mask |  | `m::rwx` |
 | Others |  | `o::rwx` |
 
-The following example indicates that we want to modify the permissions for the user `finley`. It is possible to use numerical UIDs and specify permissions as octal numbers or characters:
+The following example indicates that we want to modify the permissions for the user `finley`. It is possible to use UIDs and specify permissions as octal numbers or characters:
 
 ```plain
 u:finley:6
@@ -261,7 +261,7 @@ Here are some common options for `setfacl`, but I will explain them in detail in
 | `-R` | Recursively applies changes. |
 | `-x` | Removes specified entry. |
 | `-b` | Removes all entries. |
-| `-n` | Prevents the mask from bein recalculated. |
+| `-n` | Prevents the mask from being recalculated. |
 
 ### Creating/Modifiying entries
 
@@ -273,19 +273,19 @@ setfacl -m u:finely:rwx exampledir
 
 It is crucial that after the option `-m`, the specification follows immediately. So if you want to change the permissions recursively, you have to write `-Rm`.
 
-`-mR` would result in an error!
+`-mR` will result in an error!
 
 {{% tip %}}If you want to apply read-only permissions for files and directories recursively, you can use `rX`. A capital `X` only applies execution rights to directories. So all files would get `r` permissions, and all directories would become `rx` permissions.{{% /tip %}}
 
 ### Creating default permissions for new files
 
-If you want that newly created files to get specific permissions automatically, you can specify default permissions on the parent directory:
+If you want newly created files to get specific permissions automatically, you can specify default permissions on the parent directory:
 
 ```plain
 setfacl -dm u:finely:rwx exampledir
 ```
 
-This only works for directories. All new files and directories in `exampledir` will inherit these permissions (new directories will also inherit the default entries). Unfortunately, this applies only to newly created files, not copied ones.
+This only works for directories (`-Rdm` ignores files). All new files and directories in `exampledir` will inherit these permissions (new directories will also inherit the default entries). Unfortunately, this applies only to newly created files, not copied ones.
 
 ### Removing entries
 
