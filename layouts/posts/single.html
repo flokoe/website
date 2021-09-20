@@ -1,5 +1,11 @@
 {{ define "main" }}
     <article>
+        {{ $image := path.Join .RelPermalink "/thumbnail.webp" }}
+        {{ if (fileExists $image) }}
+        {{ $image := path.Join "/content" .RelPermalink "/thumbnail.webp" }}
+        {{ $image := imageConfig $image }}
+        <img src="thumbnail.webp" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}" class="rounded-lg mb-8" >
+        {{ end }}
         <h1>{{ .Title }}</h1>
         <p class="mb-8 text-mediumemphasis dark:text-darkmediumemphasis">
             <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read

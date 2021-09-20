@@ -8,7 +8,7 @@ Mein Hello DevOps blog.
 - [x] social media tags
 - [ ] copy to clipboard for code
 - [ ] sort table by column
-- [ ] make tables more beatiful
+- [x] make tables more beatiful
 - [ ] pagination on posts page
 - [ ] enlarge images
 - [ ] use different sizes of images for preview and enlarge
@@ -25,11 +25,26 @@ Mein Hello DevOps blog.
 - [x] security bei mozilla und ssllabs checken
 - [x] cache control
 - [ ] jump to the top
-- [ ] header bild und og image tags
+- [x] header bild und og image tags
 - [ ] inhaltsverzeichnis
 - [x] tipps und tricks aus der plausible email einbauen (outging 404, etc)
 - [ ] fix accessiblity of social icons
+  - https://css-tricks.com/can-make-icon-system-accessible/
+  - https://stackoverflow.com/questions/62703524/how-to-make-an-html-link-displayed-as-an-icon-accessible
 - [ ] Remove plausible api token from source code in env
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
 - [ ] fix logo on window firefox
+- [x] dev.to asufüllen.
+- [x] polywork ausfüllen
+- [x] xing updaten.
+- [x] githup page updaten
+- [ ] first post mit mariadb link posten und kleine self plug.
+- [ ] wip emoji in title einbauen
+- [ ] fix different maddings/maxwith for main on pages
+- [x] Disbale line os in code blocks by default
+- [x] add maring bottom like p to code blocks
+- [x] Add netlify to privacy
+- [ ] Fix line hight in code/pre (code blocks)
+- [x] no whitespace wrap for code (with overflow auto on words)
+- [x] mehr platz in flists

@@ -35,8 +35,8 @@
     @apply text-blue-600 dark:text-blue-500
   }
 
-  article p code {
-    @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5
+  article p code, article table code, article ol code, article ul code {
+    @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5 whitespace-nowrap
   }
 
   article blockquote {
@@ -44,19 +44,15 @@
   }
 
   article .highlight {
-    @apply mb-4
-  }
-
-  article .highlight > div, article .highlight table {
-    @apply rounded
+    @apply mb-5 mobile:mb-6
   }
 
   article pre {
-    @apply p-4
+    @apply p-4 rounded
   }
 
   article table {
-    @apply block overflow-auto mb-5
+    @apply block overflow-auto mb-5 mobile:mb-7
   }
 
   article td:first-child pre {
@@ -80,6 +76,10 @@
     @apply pl-8
   }
 
+  article li {
+    @apply mb-1
+  }
+
   article ol,
   article ul,
   article dl {
@@ -98,15 +98,23 @@
     @apply mb-1 ml-8
   }
 
-  article th, article td {
-    @apply border-solid border border-gray-300 dark:border-gray-700 py-1 px-2
+  article th {
+    @apply bg-gray-100 dark:bg-gray-800 text-left py-2 px-3 border-solid border border-gray-300 dark:border-gray-700
   }
 
-  article tr:nth-child(2n) {
-    @apply bg-gray-200 dark:bg-gray-800
+  article td {
+    @apply border-solid border border-gray-300 dark:border-gray-700 py-1 px-2
   }
 
   article figcaption {
     @apply text-mediumemphasis dark:text-darkmediumemphasis text-base mobile:text-lg
+  }
+
+  article pre, article code {
+    @apply overflow-auto
+  }
+
+  article .tip {
+    @apply bg-green-200 dark:bg-green-700 rounded p-4
   }
 }

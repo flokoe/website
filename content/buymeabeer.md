@@ -16,6 +16,8 @@ If you want to donate some money, here are some ways to do so:
 
 [Paypal](https://paypal.me/flokoe) - the easy way
 
+For those who do not belief in Fiat Money or should want a bit more anonomity I also support cryrpo currencies:
+
 [Bitcoin](https://hellodevops.blog)
 
 [Etheriuem](https://hellodevops.blog)
