@@ -35,7 +35,7 @@
     @apply text-blue-600 dark:text-blue-500
   }
 
-  article p code, article table code {
+  article p code, article table code, article ol code, article ul code {
     @apply rounded bg-gray-300 dark:bg-codedark px-1 pt-1 pb-0.5 whitespace-nowrap
   }
 

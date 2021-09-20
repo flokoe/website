@@ -1,6 +1,6 @@
 ---
 title: "Mastering Access Control Lists (ACLs) once and for all"
-date: 2021-09-20T11:20:50+02:00
+date: 2021-09-20T12:58:57+02:00
 draft: false
 menu: favorites
 description: ACLs can solve complex permission requirements. This guide will explain how they work and how to use them.
@@ -154,7 +154,7 @@ To better understand masks, let's start with five simple statements that always 
 2. If the ACL has named users or groups, it will have a mask entry.
 3. If the ACL has a mask entry, the permissions of the owner group will correspond to the mask entry.
 4. Unless otherwise stated, the mask entry's permissions will be the union of all permissions affected by an ACL and recalculate on every change.
-5. Masks denote maximum access rights that can be granted by a named user entry, named group entry, or the owner group.
+5. Masks denote maximum access rights that can be granted by a named user entry, named group entry, or the `group::` entry.
 
 The first statement is pretty self-explanatory. As long as there is no mask, the permissions of the owner group and the `group::` entry will be the same. Changes to the owner group will be reflected in the `group::` entry and the other way around.
 
@@ -164,11 +164,11 @@ The third statement is where it gets interesting. If a mask exists, the meaning 
 
 But how can we manage the permissions of the owner group without changing the mask? Don't worry. You can change permissions for the owner group via the `group::` entry.
 
-Thanks to the fourth statement, we know that the mask's permissions can change and always equal the union of users, groups, etc.
+Thanks to the fourth statement, we know that the mask's permissions can change and always equal the union of named users, named groups, and the `group::` entry.
 
 To prevent the mask from recalculating on change, use `-n` option.
 
-The last statement lets us know, and this is important, that you can't grant more permissions than specified in the mask for users and group entries. This restriction is what causes the so-called effective rights.
+The last statement lets us know, and this is important, that you can't grant more permissions than specified in the mask for named users, named groups, and `group::` entries. This restriction is what causes the so-called effective rights.
 
 For example, if we add the following ACL and mask:
 
@@ -193,9 +193,9 @@ One last thing to understand is the following order in which the algorithm check
 
 1. File owner.
 2. Named user entries.
-3. owner group.
+3. Owner group (or `group::` entry).
 4. Named group entries
-5. other
+5. Other
 
 The first match determines the access to the resource. The order is essential, as it will deny writing access if a named user entry with `r` exists even when the user is a member of matching group entry with correct permissions:
 
@@ -229,12 +229,12 @@ A colon separates the specification into three sections: object type, associated
 
 | Name | Type | Text form |
 | --- | --- | --- |
-| Owner |  | `u::rwx` |
-| Named user |  | `u:name:rwx` |
-| Owner group |  | `g::rwx` |
-| Named group |  | `g:name:rwx` |
-| Mask |  | `m::rwx` |
-| Others |  | `o::rwx` |
+| Owner | `ACL_USER_OBJ` | `u::rwx` |
+| Named user | `ACL_USER` | `u:name:rwx` |
+| Owner group | `ACL_GROUP_OBJ` | `g::rwx` |
+| Named group | `ACL_GROUP` | `g:name:rwx` |
+| Mask | `ACL_MASK` | `m::rwx` |
+| Others | `ACL_OTHER` | `o::rwx` |
 
 The following example indicates that we want to modify the permissions for the user `finley`. It is possible to use UIDs and specify permissions as octal numbers or characters:
 
@@ -249,18 +249,19 @@ You can modify multiple entries simultaneously by separating specifications with
 u:finley:rwx,g:accounting:rx
 ```
 
-If you use `setfacl` on a file system that does not support ACLs, `setfacl` tries to reflect the desired permissions via the standard permission and output an error. Be aware that this could lead to unexpected results.
+If you use `setfacl` on a file system that does not support ACLs, `setfacl` tries to reflect the desired permissions via the standard permissions and output an error. Be aware that this could lead to unexpected results.
 
 Here are some common options for `setfacl`, but I will explain them in detail in the following sections.
 
-{{% tip %}}If you are unsure if your ACL results in the expected outcome, you can use the `--test` option to display the new ACL entries without changing the current entries.{{% /tip %}}
+{{% tip %}}If you are unsure if your ACL results in the expected outcome, you can use the `--test` option to display the new ACL entries without changing the current ones.{{% /tip %}}
 
 | OPTION | DESCRIPTION |
 | --- | --- |
 | `-m` | Modify or add an ACL entry (always needs to be the last option). |
-| `-d` | Sets specified mask as default mask (Only works on directories). |
+| `-d` | Sets ACL entry as default (Only works on directories). |
 | `-R` | Recursively applies changes. |
 | `-x` | Removes specified entry. |
+| `-k` | Removes all default entries. |
 | `-b` | Removes all entries. |
 | `-n` | Prevents the mask from being recalculated. |
 
