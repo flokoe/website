@@ -5,6 +5,7 @@ enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
 timeZone = "Europe/Berlin"
+enableRobotsTXT = true
 
 [minify]
 disableSVG = true
