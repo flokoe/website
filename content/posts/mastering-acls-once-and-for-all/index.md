@@ -1,8 +1,9 @@
 ---
-title: "Mastering Linux Access Lists (ACLs) once and for all"
-date: 2021-09-03T19:24:43+02:00
-draft: true
+title: "Mastering Access Control Lists (ACLs) once and for all"
+date: 2021-09-20T11:20:50+02:00
+draft: false
 menu: favorites
+description: ACLs can solve complex permission requirements. This guide will explain how they work and how to use them.
 ---
 
 I often use ACLs when I have to give permissions to specific users or groups without compromising security. But I never fully understood how they work, as they are pretty complex. This guide will explain how they work and how to use them.
