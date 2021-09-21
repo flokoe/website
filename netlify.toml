@@ -15,17 +15,17 @@
     X-XSS-Protection = "1; mode=block"
     #Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
-#[[redirects]]
-#  from = "https://hellodevops.netlify.app/*"
-#  to = "https://www.hellodevops.blog/:splat"
-#  status = 301
-#  force = true
+[[redirects]]
+  from = "http://hellodevops.netlify.app/*"
+  to = "https://www.hellodevops.blog/:splat"
+  status = 301
+  force = true
 
-#[[redirects]]
-#  from = "http://hellodevops.netlify.app/*"
-#  to = "https://www.hellodevops.blog/:splat"
-#  status = 301
-#  force = true
+[[redirects]]
+  from = "https://hellodevops.netlify.app/*"
+  to = "https://www.hellodevops.blog/:splat"
+  status = 301
+  force = true
 
 #[[redirects]]
 #  from = "http://hellodevops.blog/*"
