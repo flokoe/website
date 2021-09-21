@@ -33,7 +33,7 @@
 #  status = 301
 #  force = true
 
-[[redirects]]
-  from = "http://www.hellodevops.blog/*"
-  to = "https://www.hellodevops.blog/:splat"
-  status = 301
+#[[redirects]]
+#  from = "http://www.hellodevops.blog/*"
+#  to = "https://www.hellodevops.blog/:splat"
+#  status = 301
