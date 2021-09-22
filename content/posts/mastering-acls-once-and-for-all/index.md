@@ -6,6 +6,8 @@ menu: favorites
 description: ACLs can solve complex permission requirements. This guide will explain how they work and how to use them.
 ---
 
+{{< toc >}}
+
 I often use ACLs when I have to give permissions to specific users or groups without compromising security. But I never fully understood how they work, as they are pretty complex. This guide will explain how they work and how to use them.
 
 ## Requirements

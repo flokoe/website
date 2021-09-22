@@ -121,4 +121,12 @@
   .profile-pic {
     max-width: 17rem;
   }
+
+  article ul ul {
+    @apply mb-0
+  }
+
+  .toc ul {
+    @apply list-none pl-6
+  }
 }
