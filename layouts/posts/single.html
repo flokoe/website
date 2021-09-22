@@ -1,10 +1,10 @@
 {{ define "main" }}
     <article>
-        {{ $image := path.Join .RelPermalink "/thumbnail.webp" }}
+        {{ $image := path.Join .RelPermalink "/thumbnail.jpg" }}
         {{ if (fileExists $image) }}
-        {{ $image := path.Join "/content" .RelPermalink "/thumbnail.webp" }}
+        {{ $image := path.Join "/content" .RelPermalink "/thumbnail.jpg" }}
         {{ $image := imageConfig $image }}
-        <img src="thumbnail.webp" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}" class="rounded-lg mb-8" >
+        <img src="thumbnail.jpg" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}" class="rounded-lg mb-8" >
         {{ end }}
         <h1>{{ .Title }}</h1>
         <p class="mb-8 text-mediumemphasis dark:text-darkmediumemphasis">
