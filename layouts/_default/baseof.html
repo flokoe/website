@@ -10,11 +10,11 @@
     <meta name="description" content="{{ (or .Description .Summary) }}">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ (or .Description .Summary) }}">
-    {{ $image := path.Join .RelPermalink "/thumbnail.webp" }}
+    {{ $image := path.Join .RelPermalink "/thumbnail.jpg" }}
     {{ if (fileExists $image) }}
-    <meta property="og:image" content="{{ .Permalink }}thumbnail.webp">
+    <meta property="og:image" content="{{ .Permalink }}thumbnail.jpg">
     {{ else }}
-    <meta property="og:image" content="{{ .Permalink }}default_thumbnail.webp">
+    <meta property="og:image" content="{{ .Permalink }}default_thumbnail.jpg">
     {{ end }}
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
