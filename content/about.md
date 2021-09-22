@@ -10,7 +10,7 @@ description: I love Open Source and work as a DevOps Engineer. I got a degree in
 
 My name is Florian Köhler, and I live around Hamburg, Germany. I am an Open Source enthusiast and work as a DevOps Engineer, Site Reliability Engineer, System Administrator, or whatever you call it nowadays. I got a degree in Information Technology, but most of my knowledge is self-taught.
 
-{{< figure src="/profile-pic.jpg" alt="Me trying to look good." caption="Me trying to look good." >}}
+{{< figure src="/profile-pic.jpg" height="1024" width="1024" class="profile-pic" alt="Me trying to look good." caption="Me trying to look good." >}}
 
 I now got about {{% years_of_exp %}} years of experience in tech, where I worked with big companies all around Germany. During this time, I learned many different skills and got to know various perspectives of entrepreneurship.
 
