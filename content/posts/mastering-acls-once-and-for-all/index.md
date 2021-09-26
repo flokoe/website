@@ -1,5 +1,5 @@
 ---
-title: "Mastering Access Control Lists (ACLs) once and for all"
+title: "How Access Control Lists (ACLs) work and how to use them"
 date: 2021-09-20T12:58:57+02:00
 draft: false
 menu: favorites
@@ -144,7 +144,7 @@ default:other::---
 
 ACLs with only the three base entries `user::`, `group::` and `other::` are called minimal ACLs. ACLs containing named entries are called extended ACLs.
 
-### Understanding Masks and effective rights
+### Masks and effective rights explained
 
 After looking at the output, let's address probably the most confusing aspect about Access Control Lists: Masks and effective rights.
 
@@ -267,7 +267,7 @@ Here are some common options for `setfacl`, but I will explain them in detail in
 | `-b` | Removes all entries. |
 | `-n` | Prevents the mask from being recalculated. |
 
-### Creating/Modifiying entries
+### How to create/modify ACL entries
 
 To create or modify ACLs, use the modify option `-m` and follow it with your specification explained above. If the same object exists, the new entry will overwrite existing permissions. For example, to add or change the permissions for the user `finley` to `rwx`, execute the following:
 
@@ -291,7 +291,7 @@ setfacl -dm u:finely:rwx exampledir
 
 This only works for directories (`-Rdm` ignores files). All new files and directories in `exampledir` will inherit these permissions (new directories will also inherit the default entries). Unfortunately, this applies only to newly created files, not copied ones.
 
-### Removing entries
+### Removing ACL entries
 
 To remove single entries, use the `-x` option instead of `-m`:
 
