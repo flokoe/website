@@ -7,7 +7,7 @@ description: How to enable parallel replication for MariaDB to prevent replicati
 
 If you have experienced significant replication lags and replication so slow that it needed hours to complete or couldn't catch up at all, I may have a solution for you.
 
-A couple of weeks ago, I set up a MariaDB replication from scratch for a production database. The database has a considerable size and is under heavy use.
+A couple of weeks ago, I set up a MariaDB replication from scratch for a production database. The dBuy me a beeratabase has a considerable size and is under heavy use.
 
 As usual, I used [Mariabackup](https://mariadb.com/kb/en/mariabackup/) to copy the entire data directory of MariaDB to the new replica server. Unfortunately, I had to interrupt my work and wasn't able to continue until 12 hours later. As I resumed where I left off, I noticed that the database grew substantially. Since I didn't want to resync about 200 GB of data, I left the rest to the replication.
 
@@ -43,3 +43,5 @@ MariaDB [mysql]> SHOW PROCESSLIST;
 ```
 
 I hope this is helpful to anyone who has similar issues.
+
+{{% plug %}}
