@@ -24,6 +24,14 @@ If you want to donate money, here are some ways to do so:
 
 For those who do not believe in Fiat Money or should want a bit more anonymity, I also support cryptocurrencies:
 
-Bitcoin: `bc1q6spq5cykdt6f87dazcpn55hknynwvd4sqtpd92`
+Bitcoin:
 
-Ethereum: `0x34C81172BA058155E97fbF0b19bDC3aA4852a3c6`
+```plain
+bc1q6spq5cykdt6f87dazcpn55hknynwvd4sqtpd92
+```
+
+Ethereum:
+
+```plain
+0x34C81172BA058155E97fbF0b19bDC3aA4852a3c6
+```
