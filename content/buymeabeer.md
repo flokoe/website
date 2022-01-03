@@ -14,13 +14,13 @@ However, I appreciate any form of support. Be it financial, sharing in social me
 
 If you want to donate money, here are some ways to do so:
 
-[paypal.me/hellodevops](https://paypal.me/hellodevops) – Easy one time donations.
+- [ko-fi.com/hellodevops](https://ko-fi.com/hellodevops)
+- [buymeacoffee.com/hellodevops](https://www.buymeacoffee.com/hellodevops)
+- [paypal.me/hellodevops](https://paypal.me/hellodevops)
 
 <!-- stripe -->
 
-[buymeacoffee.com/hellodevops](https://www.buymeacoffee.com/hellodevops) – One time coffee and memberships.
-
-[liberapay.com/hellodevops](https://liberapay.com/hellodevops/) – Open Source alternative to Patreon.
+<!-- [liberapay.com/hellodevops](https://liberapay.com/hellodevops/) – Open Source alternative to Patreon. -->
 
 For those who do not believe in Fiat Money or should want a bit more anonymity, I also support cryptocurrencies:
 
