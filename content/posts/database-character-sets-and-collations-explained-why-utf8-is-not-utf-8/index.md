@@ -20,7 +20,7 @@ To quote the MariaDB documentation:
 > A character set is a set of characters [and its mapping to binary] while a collation is the rules for comparing and sorting a particular character set.  
 > – [MariaDB: Character Set and Collation Overview](https://mariadb.com/kb/en/character-set-and-collation-overview/)
 
-For example, the first character of this article, `T` (LATIN CAPITAL LETTER T), in binary looks like `00110110`. The computer reads this binary sequence and knows that this is 84 in decimal. Now it looks up which character maps to this number. Using the UTF-8 character set, the number 84 equals `T`.
+For example, the first character of this article, `T` (LATIN CAPITAL LETTER T), in binary looks like `1010100`. The computer reads this binary sequence and knows that this is 84 in decimal. Now it looks up which character maps to this number. Using the UTF-8 character set, the number 84 equals `T`.
 
 ## Charater sets: The tale of □�💩
 
