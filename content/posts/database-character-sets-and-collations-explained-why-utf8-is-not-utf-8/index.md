@@ -1,18 +1,15 @@
 ---
 title: "Database character sets and collations explained – why utf8 is not UTF-8"
-date: 2021-12-18T18:39:30+01:00
+date: 2022-01-03T20:24:30+01:00
 draft: true
-description:
+description: This guide explains the difference between utf8 and utf8mb4 and why mixed collations are bad for performance
 ---
-
-Datenbank Charsets und Collations erklärt - Warum utf8 kein UTF-8 ist
-Database character sets and collations explained – why utf8 is not UTF-8
 
 {{< toc >}}
 
 The relationship between character sets and collations always seemed pretty vague to me, let alone the possible impact on performance. So if you are like me and want to know the difference between `utf8` and `utf8mb4` and why mixed collations are bad for your database performance, read on!
 
-## Character Sets and Collations Explained
+## Character sets and collations explained
 
 Since computers only understand binary and humans don't, we use character sets to map binary to specific characters. The difficulty was that different nations used different symbols and sometimes mapped the same binary sequence to other characters. So based on the character set you used, the same data could mean different things.
 
@@ -23,9 +20,9 @@ To quote the MariaDB documentation:
 > A character set is a set of characters [and its mapping to binary] while a collation is the rules for comparing and sorting a particular character set.  
 > – [MariaDB: Character Set and Collation Overview](https://mariadb.com/kb/en/character-set-and-collation-overview/)
 
-For example, the first character of this article, `T` (LATIN CAPITAL LETTER T), in binary looks like `00110110`. The computer reads this binary sequence and knows that this is 54 in decimal. Now it looks up which character maps to this number. Using the UTF-8 character set, the number 54 equals `T`.
+For example, the first character of this article, `T` (LATIN CAPITAL LETTER T), in binary looks like `00110110`. The computer reads this binary sequence and knows that this is 84 in decimal. Now it looks up which character maps to this number. Using the UTF-8 character set, the number 84 equals `T`.
 
-## Charater Sets: The Tale of □�💩
+## Charater sets: The tale of □�💩
 
 One of the most known character sets is ASCII (American Standard Code for Information Interchange). It only supports 128 different characters and is nowadays primarily used for art 😉
 
@@ -61,7 +58,7 @@ Because the `utf8` character set only allows 3 bytes, you can't store some speci
 
 To remediate this mistake [MySQL added the `utf8mb4` charset in version 5.5.3](https://web.archive.org/web/20190201033750/https://dev.mysql.com/doc/relnotes/mysql/5.5/en/news-5-5-3.html). `utf8mb4` fully implements the current standard. Now `utf8` is an alias for `utf8mb3` and will be switched to `utf8mb4`.
 
-## Collations: How to Sort Things
+## Collations: How to sort things
 
 The order of numbers is pretty straightforward – four is lower and comes before the number five. Even the English alphabet is still pretty easy. But what about other languages with additional characters or completely different symbols? Which emoji comes first? 😃 (SMILING FACE WITH OPEN MOUTH) or 😋 (FACE SAVOURING DELICIOUS FOOD)?
 
@@ -137,7 +134,7 @@ Unfortunately, `utf8mb4_unicode_ci` is based on UCS 4.0, which is very old. Even
 
 There are language-specific variants like `utf8mb4_german2_ci`, but I have never used them personally. I recommend sticking to the `unicode` versions as they fit most use cases.
 
-## What About Performance?
+## What about performance?
 
 There are some considerations when choosing your collation. The most important one is always to use the same collation when comparing strings.
 
