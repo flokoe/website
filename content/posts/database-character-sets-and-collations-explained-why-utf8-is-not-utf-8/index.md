@@ -1,9 +1,12 @@
 ---
-title: "Charsets"
+title: "Database character sets and collations explained – why utf8 is not UTF-8"
 date: 2021-12-18T18:39:30+01:00
 draft: true
 description:
 ---
+
+Datenbank Charsets und Collations erklärt - Warum utf8 kein UTF-8 ist
+Database character sets and collations explained – why utf8 is not UTF-8
 
 {{< toc >}}
 
