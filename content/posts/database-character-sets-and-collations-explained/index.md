@@ -1,5 +1,5 @@
 ---
-title: "Database character sets and collations explained – why utf8 is not UTF-8"
+title: "MySQL/MariaDB character sets and collations explained – why utf8 is not UTF-8"
 date: 2022-01-03T20:24:30+01:00
 draft: false
 description: This guide explains the difference between utf8 and utf8mb4 and why mixed collations are bad for performance
