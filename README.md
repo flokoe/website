@@ -48,3 +48,4 @@ Mein Hello DevOps blog.
 - [ ] Fix line hight in code/pre (code blocks)
 - [x] no whitespace wrap for code (with overflow auto on words)
 - [x] mehr platz in flists
+- [ ] Unless otherwise noted, all code is free to use under the MIT License and text is cc-by etc
