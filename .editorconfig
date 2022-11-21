@@ -18,5 +18,5 @@ max_line_length = 100
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{conf,html,py}]
+[*.{conf,html,py,atom}]
 indent_size = 4

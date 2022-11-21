@@ -2,10 +2,22 @@ baseURL = "https://www.hellodevops.blog/"
 languageCode = "en"
 title = "Hello DevOps"
 enableEmoji = false
-disableKinds = ["taxonomy", "term"]
+disableKinds = ["taxonomy", "term", "RSS"]
 enableGitInfo = true
 timeZone = "Europe/Berlin"
 enableRobotsTXT = true
+
+[outputs]
+home = ["HTML", "Atom"]
+
+[mediaTypes]
+[mediaTypes."application/atom+xml"]
+suffixes = ["atom"]
+
+[outputFormats.Atom]
+mediaTypes = "application/atom+xml"
+baseName = "feed"
+isPlainText = false
 
 [minify]
 disableSVG = true
