@@ -16,7 +16,19 @@
     #Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
 [[redirects]]
+  from = "http://hellodevops.netlify.app/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://hellodevops.netlify.app/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://hellodevops.blog/*"
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
@@ -28,7 +40,31 @@
   force = true
 
 [[redirects]]
+  from = "http://www.hellodevops.blog/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://www.hellodevops.blog/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://flokoe.de/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://flokoe.de/*"
+  to = "https://www.flokoe.de/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.flokoe.de/*"
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
