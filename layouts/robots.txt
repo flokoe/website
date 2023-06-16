@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.hellodevops.blog/sitemap.xml
+Sitemap: https://www.flokoe.de/sitemap.xml

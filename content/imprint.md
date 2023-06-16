@@ -22,7 +22,7 @@ Telefon: +49 151 508 46 599
 
 Use only for abuse and legal purposes. Do not call for other reasons.
 
-E-Mail: hi@hellodevops.blog
+E-Mail: hi@flokoe.de
 
 ## Redaktionell verantwortlich
 
