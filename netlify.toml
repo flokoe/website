@@ -16,19 +16,19 @@
     #Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
 [[redirects]]
-  from = "http://hellodevops.netlify.app/*"
+  from = "https://hellodevops.netlify.app/*"
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://hellodevops.blog/*"
+  from = "https://hellodevops.blog/*"
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://www.hellodevops.blog/*"
+  from = "https://www.hellodevops.blog/*"
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
