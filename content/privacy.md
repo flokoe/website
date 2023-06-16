@@ -80,7 +80,7 @@ Telefon: +49 151 508 46 599
 
 Use only for abuse and legal purposes. Do not call for other reasons.
 
-E-Mail: hi@hellodevops.blog
+E-Mail: hi@flokoe.de
 
 Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
 

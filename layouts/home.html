@@ -21,7 +21,7 @@
         </section>
         {{ end }}
 
-        {{ $json_data := getJSON "https://plausible.io/api/v1/stats/breakdown?site_id=hellodevops.blog&period=30d&property=event:page&limit=20" (dict "Authorization" "Bearer HVfwg4jUUvlrUJmVWYq3qs06vCjUJ_ACnJa0Y2arbdg-Hx1Lgma2oUO3Rb6f-e0l") }}
+        {{ $json_data := getJSON "https://plausible.io/api/v1/stats/breakdown?site_id=flokoe.de&period=30d&property=event:page&limit=20" (dict "Authorization" "Bearer HVfwg4jUUvlrUJmVWYq3qs06vCjUJ_ACnJa0Y2arbdg-Hx1Lgma2oUO3Rb6f-e0l") }}
         {{ $popular_posts := slice }}
 
         {{ if hugo.IsProduction }}

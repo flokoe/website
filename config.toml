@@ -1,6 +1,6 @@
-baseURL = "https://www.hellodevops.blog/"
+baseURL = "https://www.flokoe.de/"
 languageCode = "en"
-title = "Hello DevOps"
+title = "flokoe"
 enableEmoji = false
 disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
@@ -32,5 +32,5 @@ disableSVG = true
 [[menu.social]]
   identifier = 'mail'
   pre = '<svg class="stroke-current text-normaltext dark:text-darktext" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>'
-  url = 'mailto:hi@hellodevops.blog'
+  url = 'mailto:hi@flokoe.de'
   weight = 30
