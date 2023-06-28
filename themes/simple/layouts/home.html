@@ -1,0 +1,74 @@
+{{ define "main" }}
+    <section>
+        {{ .Content }}
+
+        <ul>
+            {{ range .Site.Menus.social }}
+            <li><a href="{{ .URL }}" aria-label="{{ title .Identifier }}">{{ .Pre }}</a></li>
+            {{ end }}
+        </ul>
+    </section>
+
+    <div>
+        <p>Don't know what to read? Here are some recommendations!</p>
+
+        <!-- Menu "favorites" is defined via front matter. -->
+        {{ with .Site.Menus.favorites }}
+        <section>
+            <h2>Some Personal Favorites</h2>
+            <ul>
+                {{ range first 10 . }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a> <span><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+
+        {{ $plausible_token := getenv "HUGO_PLAUSIBLE_TOKEN" }}
+        {{ $plausible_auth := printf "Bearer %s" $plausible_token }}
+        {{ $json_data := getJSON "https://plausible.io/api/v1/stats/breakdown?site_id=flokoe.de&period=30d&property=event:page&limit=20" (dict "Authorization" $plausible_auth) }}
+        {{ $pages := slice }}
+        {{ $popular_posts := slice }}
+
+        {{ if hugo.IsProduction }}
+            {{ range $json_data.results }}
+                {{ if hasPrefix .page "/posts" }}
+                    {{ if (ne .page "/posts/") }}
+                        {{ $pages = $pages | append . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ $pages = $json_data.results }}
+        {{ end }}
+
+        {{ range $pages }}
+            {{ if hasSuffix .page "/" }}
+                {{ $popular_posts = $popular_posts | append . }}
+            {{ end }}
+        {{ end }}
+
+        {{ with $popular_posts }}
+        <section>
+            <h2>What Others Find Popular</h2>
+            <ul>
+                {{ range first 10 .}}
+                    {{ $url := strings.TrimSuffix "/" .page }}
+                    {{ $page := $.Site.GetPage $url }}
+
+                    <li><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a> <span><time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time> · {{ $page.ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+
+        <section>
+            <h2>Recent Posts</h2>
+            <ul>
+                {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                {{ end }}
+            </ul>
+        </section>
+    </div>
+{{ end }}

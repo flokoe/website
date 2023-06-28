@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="description" content="{{ (or .Description .Summary) }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ (or .Description .Summary) }}">
+    {{ $image := path.Join .RelPermalink "/thumbnail.jpg" }}
+    {{ if (fileExists $image) }}
+    <meta property="og:image" content="{{ .Permalink }}thumbnail.jpg">
+    {{ else }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}default_thumbnail.jpg">
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="{{ .Title }}">
+    <meta name="twitter:site" content="@flokoe_">
+
+    {{ if hugo.IsProduction }}
+    <script defer data-domain="flokoe.de" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    {{ end }}
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
