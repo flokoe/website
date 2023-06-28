@@ -1,0 +1,11 @@
+<header>
+    <em><a href="/">{{ lower .Site.Title }}</a></em>
+    <nav>
+        <ul>
+            <!-- Menu "main" is defined via front matter. -->
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

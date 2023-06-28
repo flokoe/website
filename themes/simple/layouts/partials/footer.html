@@ -1,0 +1,12 @@
+<footer>
+    <p>Crafted with <span>❤</span> in Hamburg. Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+    <nav>
+        <ul>
+            <!-- Menu "footer" is defined via front matter. -->
+            {{ range .Site.Menus.footer }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+    <p><small>Copyright © {{ now.Format "2006" }} flokoe</small></p>
+</footer>
