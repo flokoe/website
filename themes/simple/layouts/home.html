@@ -2,6 +2,8 @@
     <section>
         {{ .Content }}
 
+        <p>You can contact me via</p>
+
         <ul>
             {{ range .Site.Menus.social }}
             <li><a href="{{ .URL }}" aria-label="{{ title .Identifier }}">{{ .Pre }}</a></li>
