@@ -13,7 +13,7 @@ module.exports = {
       path: ["themes/simple/assets/css"]
     },
     autoprefixer: {},
-    ...(process.env.HUGO_ENVIRONMENT === 'production' ? purgecss : {}),
+    // ...(process.env.HUGO_ENVIRONMENT === 'production' ? purgecss : {}),
     ...(process.env.HUGO_ENVIRONMENT === 'production' ? { cssnano: { preset: 'advanced' } } : {})
   }
 }
