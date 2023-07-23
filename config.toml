@@ -9,7 +9,8 @@ enableRobotsTXT = true
 theme = "simple"
 
 [build]
-  writeStats = true
+  [build.buildStats]
+    enable = true
 
 [minify]
 disableSVG = true
