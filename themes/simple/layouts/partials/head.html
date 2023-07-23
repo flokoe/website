@@ -20,6 +20,15 @@
     <meta name="twitter:image:alt" content="{{ .Title }}">
     <meta name="twitter:site" content="@flokoe_">
 
+    {{ $css := resources.Get "css/main.css" }}
+    {{ $css = $css | resources.PostCSS }}
+
+    {{ if hugo.IsProduction }}
+        {{ $css = $css | fingerprint }}
+    {{ end }}
+
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
     {{ if hugo.IsProduction }}
     <script defer data-domain="flokoe.de" src="https://plausible.io/js/plausible.outbound-links.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>

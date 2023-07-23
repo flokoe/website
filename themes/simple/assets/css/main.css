@@ -1,0 +1,10 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+@import 'themes/simple/assets/css/variables.css';
+@import 'themes/simple/assets/css/variables-dark.css' (prefers-color-scheme: dark);
+
+@import 'themes/simple/assets/css/base.css';
+@import 'themes/simple/assets/css/code.css';
+@import 'themes/simple/assets/css/posts.css';
+@import 'themes/simple/assets/css/tables.css';
+@import 'themes/simple/assets/css/home.css';
