@@ -1,9 +1,9 @@
 [build]
   publish = "public/"
-  command = "hugo --minify --verbose"
+  command = "hugo --minify --logLevel info"
 
 [build.environment]
-  HUGO_VERSION = "0.114.0"
+  HUGO_VERSION = "0.115.4"
   NODE_VERSION = "20"
 
 [[headers]]
