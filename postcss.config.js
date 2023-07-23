@@ -9,7 +9,9 @@ const purgecss = { '@fullhuman/postcss-purgecss': {
 
 module.exports = {
   plugins: {
-    'postcss-import': {},
+    'postcss-import': {
+      path: ["themes/simple/assets/css"]
+    },
     autoprefixer: {},
     ...(process.env.HUGO_ENVIRONMENT === 'production' ? purgecss : {}),
     ...(process.env.HUGO_ENVIRONMENT === 'production' ? { cssnano: { preset: 'advanced' } } : {})
