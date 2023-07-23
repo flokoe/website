@@ -8,6 +8,9 @@ timeZone = "Europe/Berlin"
 enableRobotsTXT = true
 theme = "simple"
 
+[build]
+  writeStats = true
+
 [minify]
 disableSVG = true
 
