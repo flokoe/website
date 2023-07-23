@@ -1,6 +1,6 @@
 [build]
   publish = "public/"
-  command = "hugo --gc --minify --ignoreCache"
+  command = "hugo --minify --verbose"
 
 [build.environment]
   HUGO_VERSION = "0.114.0"
