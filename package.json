@@ -1,7 +1,7 @@
 {
-  "name": "hellodevops",
+  "name": "website",
   "version": "1.0.0",
-  "description": "My engineering blog",
+  "description": "My website.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,16 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/flokoe/hellodevops.git"
   },
-  "author": "Florian Köhler",
+  "author": "Florian Köhler <hi@flokoe.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/flokoe/hellodevops/issues"
   },
   "homepage": "https://github.com/flokoe/hellodevops#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.3.3",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.2.7"
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "cssnano-preset-advanced": "^6.0.1",
+    "modern-normalize": "^2.0.0",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0"
   }
 }
