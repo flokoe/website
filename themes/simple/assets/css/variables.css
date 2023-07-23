@@ -1,0 +1,11 @@
+:root {
+  --background: #fff;
+  --text: rgba(0, 0, 0, 0.87);
+  --medium-emphasis-text: rgba(0, 0, 0, 0.6);
+  --link-color: rgb(37, 99, 235);
+  /* --link-color-clicked: ; */
+  --background-code: rgb(209 213 219);
+  --table-header-backgroud: rgb(243 244 246);
+  --table-border-color: rgb(209 213 219);
+  --tip-background: rgb(134 239 172);
+}

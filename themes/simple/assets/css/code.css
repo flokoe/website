@@ -1,0 +1,17 @@
+pre {
+  border-radius: .25rem;
+  padding: 1rem;
+  overflow: auto;
+}
+
+code {
+  background: var(--background-code);
+  border-radius: .25rem;
+  padding: 0.15rem 0.25rem;
+  padding-bottom: 0.10rem;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}

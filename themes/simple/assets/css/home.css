@@ -1,0 +1,36 @@
+#home > section {
+  margin-bottom: 4rem;
+}
+
+#home > div > p {
+  margin-bottom: 2rem;
+}
+
+#home > div ul, #socials {
+  list-style: none;
+  padding: 0;
+}
+
+#home > div li {
+  margin-bottom: .7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#home > div li span {
+  color: var(--medium-emphasis-text);
+}
+
+#socials {
+  display: flex;
+  gap: 1rem;
+}
+
+#socials li {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+#socials svg {
+  stroke: var(--text);
+}

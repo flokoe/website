@@ -3,8 +3,9 @@
     <nav>
         <ul>
             <!-- Menu "main" is defined via front matter. -->
+            {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            <li><a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a></li>
             {{ end }}
         </ul>
     </nav>

@@ -1,0 +1,37 @@
+.post img {
+  margin-bottom: 2rem;
+}
+
+.post .date {
+  /* margin-bottom: 2rem; */
+  color: var(--medium-emphasis-text);
+}
+
+.post .toc {
+  margin: 2rem 0;
+}
+
+.post .toc ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: .5rem;
+}
+
+.post .toc li {
+  margin: .2rem 0;
+}
+
+#post-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#post-list li {
+  margin-bottom: .7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#post-list li span {
+  color: var(--medium-emphasis-text);
+}

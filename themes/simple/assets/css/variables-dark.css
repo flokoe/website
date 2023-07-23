@@ -1,0 +1,10 @@
+:root {
+  --background: #121212;
+  --text: rgba(255, 255, 255, 0.87);
+  --medium-emphasis-text: rgba(255, 255, 255, 0.6);
+  --link-color: rgb(59 130 246);
+  --background-code: rgb(40, 42, 54);
+  --table-header-backgroud: rgb(31 41 55);
+  --table-border-color: rgb(55 65 81);
+  --tip-background: rgb(21 128 61);
+}
