@@ -7,20 +7,6 @@
   color: var(--medium-emphasis-text);
 }
 
-.post .toc {
-  margin: 2rem 0;
-}
-
-.post .toc ul {
-  list-style: none;
-  padding-left: 1rem;
-  margin-top: .5rem;
-}
-
-.post .toc li {
-  margin: .2rem 0;
-}
-
 #post-list ul {
   list-style: none;
   padding: 0;
