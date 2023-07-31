@@ -87,7 +87,7 @@ footer nav ul {
 blockquote {
   padding-left: 1rem;
   border-left: 4px solid;
-  border-color: var(--medium-emphasis-text);
+  color: var(--medium-emphasis-text);
   margin: 0;
 }
 
