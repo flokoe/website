@@ -6,7 +6,7 @@ menu:
   main:
     name: Hire
     weight: 30
-description: 
+description: I can provide trainings/workshops, or talks about Automation, infrastructure, container and more. Email me if you're interested.
 ---
 
 I charge 680€ per day.
