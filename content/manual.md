@@ -26,23 +26,23 @@ Even though I prefer to find the right solution, I understand the complexities o
 
 ## I work best when
 
-- I can get my headphones on, mute notifications and get down to the task at hand.
-- I have a team that is atleast on par with my technical abilities.
-- I have freedom choose tools, technologiy and architecture to build the best solutuins.
+- I can get my headphones on, mute notifications, and get down to the task at hand.
+- I have a team that is at least on par with my technical abilities.
+- I have the freedom to choose tools, technology, and architecture to build the best solutions.
 - I work remotely, where I feel comfortable and without being disturbed.
 
-I have high expectations for my team but can and should demand thoes things from me as well.
+I have high expectations for my team, but they can and should demand those things from me as well.
 I assume the following things to be true if we work together:
 
-- Everyone is good at what they do and have good intentions.
+- Everyone is good at what they do and has good intentions.
 - We strive for excellence in our work and collaboration.
 - We all have a high degree of personal responsibility.
 - We challenge and support each other.
-- Peopla make mistakes, if somthein breaks our tools or process are not good enough.
+- People make mistakes; if something breaks, our tools or processes are not good enough.
 - No politics.
 
-Let's continually learn new things, and improve our skills and the way we work by thinking critically and self-reflect.
-"Because we’ve always done it this way" is not a work culture.
+Let's continually learn new things and improve our skills and the way we work by thinking critically and self-reflecting.
+"Because we've always done it this way" is not a work culture.
 
 ## My working hours
 
@@ -62,9 +62,9 @@ Europe/Berlin ({{% timezone %}})
 I prefer having a standup between 09:00 and 11:00 so that I have time to check messages and see whether things have progressed and production is not in flames.
 Furthermore, I like to put my focus hours in the morning.
 
-My lunchtime varies from day to day, which gives me some flexibility to plan my rest of the day, but I like to prevent any meetings after 15:00 as I am not as productive in the late afternoon.
+My lunchtime varies from day to day, which allows me some flexibility to plan my rest of the day, but I like to prevent any meetings after 15:00 as I am not as productive in the late afternoon.
 
-## My preferred channels of communications are
+## My preferred channels of communication are
 
 In priority order:
 
@@ -93,15 +93,15 @@ Do you need additional information from me?
 Is something blocking your work?
 I prefer to know about these things sooner rather than later.
 There is no reason to wait for the next meeting.
-Moreover, I favor long-form text over fancy power point slides.
-By writing long-form we are forced to clarify our thinking, and expose the most common fallacies.
+Moreover, I favor long-form text over fancy PowerPoint slides.
+By writing long-form text, we are forced to clarify our thinking and expose the most common fallacies.
 As a side effect, we automatically document our communication and results.
 
 ### A word on meetings
 
-Decisions can be reached without everyone in the same room and I personally try to avoid meetings.
-There are of course valid reasons for metings.
-In tht case, I expect the meeting to be run efficiently and respectful of everyone’s time and contributions.
+Decisions can be reached without everyone in the same room.
+Even though I try to avoid meetings, there are valid reasons for them.
+In such a case, I expect the meeting to be run efficiently and respectful of everyone's time and contributions.
 If a meeting has no agenda, I probably won't even attend or ask for permission to leave if I feel that I do not bring any value to it.
 
 ## Feedback is best given
@@ -110,9 +110,9 @@ One-on-one, direct, candid, and written, based on objective observations.
 Ideally, right after you have seen something you did not appreciate, or at short and regular intervals.
 Even better, if you provide suggestions on how I could improve.
 
-For more complex/interpersonal feedback, let's discuss in person and document our results afterward.
+For more complex/interpersonal feedback, let's discuss it in person and document our results afterward.
 
-## What motivates me or how to get me onboard
+## What motivates me, or how to get me on board
 
 - Opportunity to explore/learn something new, see things from a different perspective, and think about complex problems that matter.
 - People I can discuss with on a high technical and intellectual level.
