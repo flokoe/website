@@ -1,1 +1,3 @@
-{{ now.Format "MST" }} or UTC {{ now.Format "-07:00" -}}
+{{ $time := now.Format "2006-01-02" -}}
+{{ $time := time $time "Europe/Berlin" -}}
+{{ $time.Format "MST" }} or UTC {{ $time.Format "-07:00" -}}
