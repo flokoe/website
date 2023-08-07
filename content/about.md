@@ -20,6 +20,8 @@ This blog is for me to remember how things work and for everyone else interested
 
 Not all entries on this page are complete, as I try to publish early and often. I will try my best to mark all posts that are still work in progress. If you feel I've got something wrong or want to talk, please feel free to send me a message via [Twitter](https://twitter.com/flokoe_) or [mail](mailto:hi@flokoe.de).
 
+If you want to know more about me, have a look at [my user manual: how to work with me](/manual/).
+
 You can also find me on
 
 - [polywork.com/flokoe](https://www.polywork.com/flokoe)
