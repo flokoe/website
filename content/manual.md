@@ -1,7 +1,7 @@
 ---
 title: "My user manual: How to work with me"
 date: 2023-07-30T23:19:45+02:00
-draft: true
+draft: false
 description: This page aims to be a user guide about me. It captures my guiding values and how I work as a human.
 ---
 
@@ -9,7 +9,8 @@ This page is inspired by [Manual of Me](https://my.manualof.me/), and aims to be
 It captures my guiding values and how I work as a human.
 This is a living document, and it will continue to grow and change as I grow and change in the future.
 
-For a more general overview, see my [about](/about/) page, or if you are interested in hiring me, see the pages [Hire me](/hire/) and [My CV/Resume](/resume/).
+For a more general overview, see my [about](/about/) page, or if you are interested in hiring me, see the pages [Hire me](/hire/).
+<!-- and [My CV/Resume](/resume/) -->
 
 {{< toc >}}
 
