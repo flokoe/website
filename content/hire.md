@@ -1,7 +1,7 @@
 ---
 title: "Hire me"
 date: 2023-07-30T19:26:25+02:00
-draft: true
+draft: false
 menu:
   main:
     name: Hire
@@ -16,7 +16,7 @@ And if I do not meet the agreed deadline, I will waive off 50% of the price.
 If I deliver early, you only pay up to that day.
 I won't charge for projects with schools, non-profit organizations, or other honorary endeavors.
 
-If you want to know why I would be qualified to do all this, take a look at my [CV/Resume](/resume/).
+<!-- If you want to know why I would be qualified to do all this, take a look at my [CV/Resume](/resume/). -->
 For insights into how I work and in which environments I thrive, check out [My user manual: How to work with me](/manual/).
 
 [Email me](mailto:hi@flokoe.de) if you're interested in working together.
