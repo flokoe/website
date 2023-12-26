@@ -1,5 +1,12 @@
 {
     "names": {
         "_": "e2b0524a95303d90f552a5547ce0c49887aba00fbb6b6bd7e4013946abd6ad36"
+    },
+    "relays": {
+        "e2b0524a95303d90f552a5547ce0c49887aba00fbb6b6bd7e4013946abd6ad36": [
+            "wss://relayable.org",
+            "wss://relay.nostr.band",
+            "wss://relay.snort.social"
+        ]
     }
 }
