@@ -15,6 +15,10 @@
     X-XSS-Protection = "1; mode=block"
     #Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
+  for = "/.well-known/nostr.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
 [[redirects]]
   from = "http://hellodevops.netlify.app/*"
   to = "https://www.flokoe.de/:splat"
