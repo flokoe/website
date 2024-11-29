@@ -73,3 +73,9 @@
   to = "https://www.flokoe.de/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/buymeabeer*"
+  to = "/support/"
+  status = 301
+  force = true
