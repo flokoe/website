@@ -13,6 +13,11 @@ language: de
 ## Angaben gem&auml;&szlig; &sect; 5 TMG
 
 Florian Köhler  
+c/o Postflex #7796  
+Emsdettener Str. 10  
+48268 Greven
+
+Keine Pakete oder Päckchen - Annahme wird verweigert!
 
 ## Kontakt
 
@@ -25,5 +30,10 @@ E-Mail: hi@flokoe.de
 ## Redaktionell verantwortlich
 
 Florian Köhler  
+c/o Postflex #7796  
+Emsdettener Str. 10  
+48268 Greven
+
+Keine Pakete oder Päckchen - Annahme wird verweigert!
 
 Quelle: [https://www.e-recht24.de](https://www.e-recht24.de)

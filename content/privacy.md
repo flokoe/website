@@ -73,6 +73,11 @@ Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. be
 Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:
 
 Florian K&ouml;hler  
+c/o Postflex #7796  
+Emsdettener Str. 10  
+48268 Greven
+
+Keine Pakete oder Päckchen - Annahme wird verweigert!
 
 Telefon: +49 151 508 46 599
 
