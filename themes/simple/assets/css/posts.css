@@ -12,12 +12,26 @@
   padding: 0;
 }
 
-#post-list li {
-  margin-bottom: .7rem;
-  display: flex;
-  flex-direction: column;
+#post-list ul li:nth-child(odd) {
+  background: var(--post-list-bg);
 }
 
 #post-list li span {
   color: var(--medium-emphasis-text);
+}
+
+#post-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+}
+
+#post-list li:hover {
+  background: var(--post-list-hover) !important;
+}
+
+#post-list li a {
+  width: 100%;
+  padding: 2px 0;
 }
