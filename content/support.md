@@ -1,28 +1,25 @@
 ---
-title: "Buy me a beer and support my work"
+title: "Support my work"
 date: 2021-08-26T22:50:10+02:00
 draft: false
 menu:
   main:
-    name: Buy Me A Beer
+    name: Support Me
     weight: 40
 ---
 
-Well, if you don't like beer, I drink coffee too!
+If you like what you read and want to support me, buy me coffee!
 
-However, I appreciate any form of support. Be it financial, sharing in social media, or a nice message.
+However, I appreciate any form of support. Be it financial, sharing in social
+media, or a nice message.
 
-If you want to donate money, here are some ways to do so:
+If you really want to donate money, here are some ways to do so:
 
-- [ko-fi.com/hellodevops](https://ko-fi.com/hellodevops)
-- [buymeacoffee.com/hellodevops](https://www.buymeacoffee.com/hellodevops)
-- [paypal.me/hellodevops](https://paypal.me/hellodevops)
+- [ko-fi.com/flokoe](https://ko-fi.com/flokoe)
+- [buymeacoffee.com/flokoe](https://www.buymeacoffee.com/flokoe)
 
-<!-- stripe -->
-
-<!-- [liberapay.com/hellodevops](https://liberapay.com/hellodevops/) – Open Source alternative to Patreon. -->
-
-For those who do not believe in Fiat Money or should want a bit more anonymity, I also support cryptocurrencies:
+For those who do not believe in Fiat Money or should want a bit more anonymity,
+I also support cryptocurrencies:
 
 Bitcoin:
 
