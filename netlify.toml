@@ -3,7 +3,7 @@
   command = "hugo --minify --logLevel info"
 
 [build.environment]
-  HUGO_VERSION = "0.115.4"
+  HUGO_VERSION = "0.136.5"
   NODE_VERSION = "20"
 
 [[headers]]

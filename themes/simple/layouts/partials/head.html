@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@flokoe_">
 
     {{ $css := resources.Get "css/main.css" }}
-    {{ $css = $css | resources.PostCSS }}
+    {{ $css = $css | css.PostCSS }}
 
     {{ if hugo.IsProduction }}
         {{ $css = $css | fingerprint }}

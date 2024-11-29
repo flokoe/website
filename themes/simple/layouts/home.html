@@ -27,7 +27,8 @@
 
             {{ $plausible_token := getenv "HUGO_PLAUSIBLE_TOKEN" }}
             {{ $plausible_auth := printf "Bearer %s" $plausible_token }}
-            {{ $json_data := getJSON "https://plausible.io/api/v1/stats/breakdown?site_id=flokoe.de&period=30d&property=event:page&limit=20" (dict "Authorization" $plausible_auth) }}
+            {{ $raw_data := resources.GetRemote "https://plausible.io/api/v1/stats/breakdown?site_id=flokoe.de&period=30d&property=event:page&limit=20" (dict "Authorization" $plausible_auth) }}
+            {{ $json_data := $raw_data | transform.Unmarshal }}
             {{ $pages := slice }}
             {{ $popular_posts := slice }}
 
