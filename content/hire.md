@@ -9,7 +9,7 @@ menu:
 description: I can provide trainings/workshops, or talks about automation, infrastructure, containers, and more. Email me if you're interested.
 ---
 
-I charge 680€ per day.
+I charge 552€ per day.
 
 But I do not accept payments unless my clients are delighted.
 And if I do not meet the agreed deadline, I will waive off 50% of the price.
