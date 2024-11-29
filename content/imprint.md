@@ -13,8 +13,6 @@ language: de
 ## Angaben gem&auml;&szlig; &sect; 5 TMG
 
 Florian Köhler  
-***REMOVED***  
-***REMOVED***
 
 ## Kontakt
 
@@ -27,7 +25,5 @@ E-Mail: hi@flokoe.de
 ## Redaktionell verantwortlich
 
 Florian Köhler  
-***REMOVED***  
-***REMOVED***
 
 Quelle: [https://www.e-recht24.de](https://www.e-recht24.de)

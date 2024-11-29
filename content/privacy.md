@@ -73,8 +73,6 @@ Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. be
 Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:
 
 Florian K&ouml;hler  
-***REMOVED***  
-***REMOVED***
 
 Telefon: +49 151 508 46 599
 
