@@ -1,0 +1,16 @@
+{{- $type := .Get 0 | lower -}}
+{{- $title := .Get 1 -}}
+
+{{- if (not $title) -}}
+{{- $title = strings.Title $type -}}
+{{- end -}}
+
+<div class="admonition {{ $type }}">
+    <p class="admonition-title">
+        {{- index .Site.Data.admonitionIcons $type | safe.HTML -}}
+
+        {{ $title }}
+    </p>
+
+    <p>{{ .Inner | markdownify }}</p>
+</div>

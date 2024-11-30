@@ -1,0 +1,25 @@
+/* Admonition*/
+.admonition p {
+  padding: .5rem 1rem;
+}
+
+.admonition-title {
+  margin: 0;
+  font-weight: bold;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.admonition-title svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.admonition.note {
+  border-left: 0.2rem solid #448aff;
+}
+
+.admonition.note>.admonition-title {
+  color: #448aff;
+}
