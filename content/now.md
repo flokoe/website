@@ -15,9 +15,9 @@ For those who are wondering what I am currently working on or interested in, her
 
 - Increase knowledge in DevSecOps.
 - Trying to master MariaDB (aka the road to becoming this mystic creature called DBA).
-- Evaluating [Development Containers](https://containers.dev/) as a viable solution to "it works on my machine".
 - Implementing internal and dynamic dev/preview environments via HashiCorp Nomad.
 - Building a small wooden sailing boat/dinghy.
+- Dipping toes into politics.
 
 ## Some mid/long-term interests of mine
 
@@ -34,7 +34,7 @@ For those who are wondering what I am currently working on or interested in, her
 ## Things I use
 
 - On the server, I'm a Debian Linux user.
-- I use Arch BTW (running Gnome), peeking into NixOS.
+- I use Arch BTW (running Gnome) and Bazzite (Fedora Atomic Desktop).
 - My current color scheme is [Catppuccin Mocha](https://github.com/catppuccin/catppuccin).
 - I love Vim, but mostly use VS Code nowadays.
 - My font of choice is Hack.
