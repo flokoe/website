@@ -1,0 +1,28 @@
+{{- $id := $.Inner | md5 | printf "lb%s" -}}
+{{- .Page.Store.Add "lightboxes" (slice $id) -}}
+
+<figure class="gallery {{ $id }}">
+    {{- if .Get 0 -}}
+    <figcaption>
+        {{- with .Get 0 -}}{{ . }}{{- end -}}
+    </figcaption>
+    {{- end -}}
+
+    {{- $input := split (strings.TrimSpace .InnerDeindent) "\n" -}}
+    {{- $input = apply $input "split" "." " " -}}
+
+    {{- $images := slice -}}
+    {{- range $input -}}
+        {{- $images = $images | append (dict "path" (index . 0) "alt" (index . 1)) -}}
+    {{- end -}}
+
+    <ul>
+    {{- range $images -}}
+        <li>
+            <a href="{{ .path }}">
+                <img src="{{ .path }}" alt="{{ .alt }}">
+            </a>
+        </li>
+    {{- end -}}
+    </ul>
+</figure>

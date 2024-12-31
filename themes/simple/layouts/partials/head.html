@@ -20,6 +20,16 @@
     <meta name="twitter:image:alt" content="{{ .Title }}">
     <meta name="twitter:site" content="@flokoe_">
 
+    {{- if .HasShortcode "gallery" -}}
+        {{- $slbCSS := resources.Get "simple-lightbox.min.css" -}}
+
+        {{- if hugo.IsProduction -}}
+            {{- $slbCSS = $slbCSS | fingerprint -}}
+        {{- end -}}
+
+        <link rel="stylesheet" href="{{ $slbCSS.RelPermalink }}" integrity="{{ $slbCSS.Data.Integrity }}">
+    {{- end -}}
+
     {{ $css := resources.Get "css/main.css" }}
     {{ $css = $css | css.PostCSS }}
 
@@ -40,4 +50,17 @@
 
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    {{- if .HasShortcode "gallery" -}}
+        {{- $slbJS := resources.Get "simple-lightbox.min.js" -}}
+
+        {{- if hugo.IsProduction -}}
+            {{- $slbJS = $slbJS | fingerprint -}}
+        {{- end -}}
+
+        <script defer src="{{ $slbJS.RelPermalink }}"></script>
+
+        {{ $js := resources.Get "lightbox.js" | resources.ExecuteAsTemplate "js/lightbox.js" . | minify }}
+        <script>{{ $js.Content | safeJS }}</script>
+    {{- end -}}
 </head>
