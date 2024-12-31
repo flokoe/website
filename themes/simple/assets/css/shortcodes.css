@@ -55,3 +55,16 @@
   aspect-ratio: 4/3;
   object-fit: cover;
 }
+
+.sl-overlay {
+  background: #000;
+}
+
+.sl-wrapper .sl-image .sl-caption {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.sl-wrapper .sl-close, .sl-wrapper .sl-counter, .sl-wrapper .sl-navigation button {
+  color: #fff;
+}
