@@ -18,9 +18,11 @@
 
     <ul>
     {{- range $images -}}
+        {{- $image := $.Page.Resources.Get .path -}}
+        {{- $thumbnail := $image.Resize "640x webp q75" -}}
         <li>
-            <a href="{{ .path }}">
-                <img src="{{ .path }}" alt="{{ .alt }}">
+            <a href="{{ $image.RelPermalink }}">
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .alt }}">
             </a>
         </li>
     {{- end -}}
