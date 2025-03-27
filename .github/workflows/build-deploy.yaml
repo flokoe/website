@@ -1,0 +1,20 @@
+---
+
+name: Build and deploy website
+
+'on':
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '20 4 * * 1'
+
+jobs:
+  build-deploy:
+    uses: flokoe/server/.github/workflows/reusable-hugo-build-deploy.yml@main
+    with:
+      user: ${{ vars.USER }}
+    secrets:
+      host_key: ${{ secrets.SSH_KNOWN_HOSTS }}
+      private_key: ${{ secrets.SSH_PRIVATE_KEY }}
