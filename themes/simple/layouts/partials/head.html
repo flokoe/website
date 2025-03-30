@@ -8,11 +8,19 @@
     <meta name="description" content="{{ (or .Description .Summary) }}">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ (or .Description .Summary) }}">
-    {{ $image := path.Join .RelPermalink "/thumbnail.jpg" }}
-    {{ if (fileExists $image) }}
-    <meta property="og:image" content="{{ .Permalink }}thumbnail.jpg">
+
+    {{ $thumb := false }}
+
+    {{ with .Resources.Get "thumbnail.webp" }}
+        {{ $thumb = . }}
+    {{ else with .Resources.Get "thumbnail.jpg" }}
+        {{ $thumb = . }}
+    {{ end }}
+
+    {{ with $thumb }}
+        <meta property="og:image" content="{{ .Permalink }}">
     {{ else }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}default_thumbnail.jpg">
+        <meta property="og:image" content="{{ .Site.BaseURL }}default_thumbnail.jpg">
     {{ end }}
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">

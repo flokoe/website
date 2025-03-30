@@ -1,11 +1,17 @@
 {{ define "main" }}
     <article class="post">
-        {{ $image := path.Join .RelPermalink "/thumbnail.jpg" }}
-        {{ if (fileExists $image) }}
-        {{ $image := path.Join "/content" .RelPermalink "/thumbnail.jpg" }}
-        {{ $image := imageConfig $image }}
-        <img src="thumbnail.jpg" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}">
+        {{ $thumb := false }}
+
+        {{ with .Resources.Get "thumbnail.webp" }}
+            {{ $thumb = . }}
+        {{ else with .Resources.Get "thumbnail.jpg" }}
+            {{ $thumb = . }}
         {{ end }}
+
+        {{ with $thumb }}
+            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Title }}">
+        {{ end }}
+
         <h1>{{ .Title }}</h1>
         <p class="date">
             <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
