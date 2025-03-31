@@ -1,5 +1,7 @@
+{{- $noop:= .Content -}}
+
 document.addEventListener('DOMContentLoaded', () => {
-  {{ range.Store.Get "lightboxes" }}
-    const {{ .}} = new SimpleLightbox('.{{ . }} a', { captionsData: 'alt' });
+  {{ range .Store.Get "lightboxes" }}
+    const {{ . }} = new SimpleLightbox('.{{ . }} a', { captionsData: 'alt' });
   {{ end }}
 })

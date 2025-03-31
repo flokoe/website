@@ -22,7 +22,7 @@
         {{- $thumbnail := $image.Resize "640x webp q75" -}}
         <li>
             <a href="{{ $image.RelPermalink }}">
-                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .alt }}">
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .alt }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" loading="lazy">
             </a>
         </li>
     {{- end -}}
