@@ -19,7 +19,7 @@
                 <h2>Some Personal Favorites</h2>
                 <ul>
                     {{ range first 10 . }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a> <span><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "Jan 2, 2006" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
+                    <li><a href="{{ .URL }}">{{ .Name }}</a> <span><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Page.Date.Format "2006-01-02" }}</time> · {{ .Page.ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
@@ -58,7 +58,7 @@
                         {{ $url := strings.TrimSuffix "/" .page }}
                         {{ $page := $.Site.GetPage $url }}
 
-                        <li><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a> <span><time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time> · {{ $page.ReadingTime }} min read</span></li>
+                        <li><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a> <span><time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $page.Date.Format "2006-01-02" }}</time> · {{ $page.ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
@@ -68,7 +68,7 @@
                 <h2>Recent Posts</h2>
                 <ul>
                     {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read</span></li>
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
