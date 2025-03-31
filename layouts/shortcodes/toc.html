@@ -1,6 +1,12 @@
-<p>
-    <details class="toc">
-        <summary>Table Of Contents</summary>
-        {{ $.Page.TableOfContents }}
-    </details>
-</p>
+{{ with $.Page.Fragments.Headings }}
+    {{ $firstLevel := index . 0 }}
+    {{ $numberOfHeadings := len $firstLevel.Headings }}
+
+    {{ if gt $numberOfHeadings 2 }}
+        <div class="toc">
+            <strong>Table Of Contents</strong>
+
+            {{ $.Page.TableOfContents }}
+        </div>
+    {{ end }}
+{{ end }}

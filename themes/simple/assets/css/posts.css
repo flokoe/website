@@ -36,3 +36,13 @@
   padding: 2px 0;
   text-decoration: none;
 }
+
+.toc {
+  background: var(--post-list-bg);
+  border-radius: .25rem;
+  padding: 1rem;
+}
+
+.toc ul:last-child, .toc li:last-child {
+  margin-bottom: 0;
+}
