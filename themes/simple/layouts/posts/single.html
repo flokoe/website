@@ -13,9 +13,19 @@
         {{ end }}
 
         <h1>{{ .Title }}</h1>
+
         <p class="date">
-            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
+            {{ $date := or .PublishDate .Date }}
+            <time id="publish_date" name="publish_date" datetime="{{ $date | time.Format " 2006-01-02T15:04:05-07:00" }}">
+                {{ $date | time.Format "2006-01-02" }}</time>,
+            edited:
+            <time id="edit_date" name="edit_date" datetime="{{ .Lastmod | time.Format " 2006-01-02T15:04:05-07:00" }}">
+                {{ .Lastmod | time.Format "2006-01-02 15:04" }}</time>,
+            <a href="https://github.com/flokoe/website/commits/main/content/{{ .File.Path }}">Version
+                History</a>
+            · {{ .ReadingTime }} min read
         </p>
+
         {{ .Content }}
     </article>
 {{ end }}
