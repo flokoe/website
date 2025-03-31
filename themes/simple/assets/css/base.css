@@ -157,3 +157,8 @@ li {
 summary {
   cursor: pointer;
 }
+
+.h-permalink {
+  text-decoration: none;
+  font-size: 85%;
+}

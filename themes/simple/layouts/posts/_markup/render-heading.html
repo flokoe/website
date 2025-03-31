@@ -1,0 +1,4 @@
+<h{{ .Level }} id="{{ .Anchor }}">
+    {{ .Text | safeHTML }}
+    <a href="#{{ .Anchor }}" title="Permalink to {{ .Text | safeHTML }}" class="h-permalink">🔗</a>
+</h{{ .Level }}>
