@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@flokoe_">
 
     {{- if .HasShortcode "gallery" -}}
-        {{- $slbCSS := resources.Get "simple-lightbox.min.css" -}}
+        {{- $slbCSS := resources.Get "css/simple-lightbox.min.css" -}}
 
         {{- if hugo.IsProduction -}}
             {{- $slbCSS = $slbCSS | fingerprint -}}
@@ -48,7 +48,9 @@
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
     {{ if hugo.IsProduction }}
-    <script defer data-domain="flokoe.de" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    {{ $plausible_url := "https://plausible.io/js/plausible.js" }}
+    {{ $plausible := resources.GetRemote $plausible_url | fingerprint }}
+    <script defer data-domain="flokoe.de" src="{{ $plausible_url }}" integrity="{{ $plausible.Data.Integrity }}" crossorigin="anonymous"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
         {{ if eq .Kind "404" }}
@@ -67,19 +69,20 @@
         {{- else }}
             {{- $opts := dict "minify" true }}
             {{- with . | js.Build $opts | fingerprint }}
-                <script defer src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+                <script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
             {{- end }}
         {{- end }}
     {{- end }}
 
     {{- if .HasShortcode "gallery" -}}
-        {{- $slbJS := resources.Get "simple-lightbox.min.js" -}}
+        {{- $slbJS := resources.Get "js/simple-lightbox.min.js" -}}
 
         {{- if hugo.IsProduction -}}
             {{- $slbJS = $slbJS | fingerprint -}}
-        {{- end -}}
-
+            <script defer src="{{ $slbJS.RelPermalink }}" integrity="{{ $slbJS.Data.Integrity }}"></script>
+        {{- else -}}
         <script defer src="{{ $slbJS.RelPermalink }}"></script>
+        {{- end -}}
 
         {{ $js := resources.Get "lightbox.js" | resources.ExecuteAsTemplate "js/lightbox.js" . | minify }}
         <script>{{ $js.Content | safeJS }}</script>
