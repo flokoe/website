@@ -18,6 +18,7 @@
 
 #post-list li span {
   color: var(--medium-emphasis-text);
+  flex-shrink: 0;
 }
 
 #post-list li {
