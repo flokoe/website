@@ -9,7 +9,7 @@ Mein Hello DevOps blog.
 - [ ] copy to clipboard for code
 - [ ] sort table by column
 - [x] make tables more beatiful
-- [ ] pagination on posts page
+- [ ] ~~pagination on posts page~~ probably not, one index for str+f is better
 - [ ] enlarge images
 - [ ] use different sizes of images for preview and enlarge
 - [x] initial content (home, privary impressum)
@@ -24,14 +24,14 @@ Mein Hello DevOps blog.
 - [x] create scheduled deployment every 2 weeks via gh actions and webhook for netlify
 - [x] security bei mozilla und ssllabs checken
 - [x] cache control
-- [ ] jump to the top
+- [x] jump to the top
 - [x] header bild und og image tags
-- [ ] inhaltsverzeichnis
+- [x] inhaltsverzeichnis
 - [x] tipps und tricks aus der plausible email einbauen (outging 404, etc)
-- [ ] fix accessiblity of social icons
+- [x] fix accessiblity of social icons
   - https://css-tricks.com/can-make-icon-system-accessible/
   - https://stackoverflow.com/questions/62703524/how-to-make-an-html-link-displayed-as-an-icon-accessible
-- [ ] Remove plausible api token from source code in env
+- [x] Remove plausible api token from source code in env
 - [ ] evtl mehr platz zu headers nac huntern un doben, zwischen listen, code font kleiner
 - [ ] enlarge code to fullscreen
 - [ ] fix logo on window firefox
@@ -39,7 +39,7 @@ Mein Hello DevOps blog.
 - [x] polywork ausfüllen
 - [x] xing updaten.
 - [x] githup page updaten
-- [ ] first post mit mariadb link posten und kleine self plug.
+- [x] first post mit mariadb link posten und kleine self plug.
 - [ ] wip emoji in title einbauen
 - [ ] fix different maddings/maxwith for main on pages
 - [x] Disbale line os in code blocks by default
