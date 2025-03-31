@@ -1,7 +1,7 @@
 ---
 title: Create an App Logo Without Design Skills Using Claude's SVG Artifacts
 date: 2025-03-28T13:50:06+01:00
-draft: false
+draft: true
 description: foobar
 publishDate: '2025-03-31T23:52:00+02:00'
 ---
