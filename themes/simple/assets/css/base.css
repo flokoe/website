@@ -31,7 +31,6 @@ main {
 }
 
 a {
-  text-decoration: none;
   color: var(--link-color);
 }
 
@@ -45,6 +44,10 @@ video {
 
 header {
   margin-bottom: 3rem;
+}
+
+header a {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 430px) {

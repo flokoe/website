@@ -34,4 +34,5 @@
 #post-list li a {
   width: 100%;
   padding: 2px 0;
+  text-decoration: none;
 }
