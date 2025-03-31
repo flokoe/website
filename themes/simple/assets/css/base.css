@@ -20,9 +20,10 @@ body {
   background: var(--background);
   color: var(--text);
   padding: 1rem;
-  line-height: 1.5;
-  max-width: 42rem;
+  line-height: 1.6;
+  max-width: 47rem;
   margin: 0 auto;
+  font-size: 1.13rem;
 }
 
 main {
@@ -61,7 +62,7 @@ header {
 header em {
   font-style: normal;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.37rem;
   display: inline-block;
   margin-bottom: 1.3rem;
 }
@@ -132,7 +133,7 @@ ul ul {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1.3;
 }
 
@@ -147,7 +148,7 @@ h1 {
 }
 
 li {
-  margin: .3rem 0;
+  margin: .5rem 0;
 }
 
 summary {
