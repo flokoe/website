@@ -60,6 +60,11 @@ header a {
   header em, header ul {
     margin: 0 !important;
   }
+
+  .showBtn {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
 
 header em {
@@ -161,4 +166,20 @@ summary {
 .h-permalink {
   text-decoration: none;
   font-size: 85%;
+}
+
+.scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: var(--post-list-hover);
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s;
 }

@@ -59,6 +59,19 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+    {{- with resources.Get "js/main.js" }}
+        {{- if eq hugo.Environment "development" }}
+                {{- with . | js.Build }}
+                    <script async src="{{ .RelPermalink }}"></script>
+                {{- end }}
+        {{- else }}
+            {{- $opts := dict "minify" true }}
+            {{- with . | js.Build $opts | fingerprint }}
+                <script async src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+            {{- end }}
+        {{- end }}
+    {{- end }}
+
     {{- if .HasShortcode "gallery" -}}
         {{- $slbJS := resources.Get "simple-lightbox.min.js" -}}
 
