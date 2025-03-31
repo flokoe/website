@@ -7,8 +7,9 @@
             {{ range $pages }}
                 <li>
                     <span>
-                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-                            {{ .Date.Format "2006-01-02" }}
+                        {{ $date := or .PublishDate .Date }}
+                        <time datetime="{{ $date.Format "2006-01-02T15:04:05Z07:00" }}">
+                            {{ $date.Format "2006-01-02" }}
                         </time>
                     </span>
 
