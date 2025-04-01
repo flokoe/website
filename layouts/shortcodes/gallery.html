@@ -9,7 +9,7 @@
     {{- end -}}
 
     {{- $input := split (strings.TrimSpace .InnerDeindent) "\n" -}}
-    {{- $input = apply $input "split" "." " " -}}
+    {{- $input = apply $input "split" "." "|" -}}
 
     {{- $images := slice -}}
     {{- range $input -}}
