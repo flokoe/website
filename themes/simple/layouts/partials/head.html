@@ -84,7 +84,9 @@
         <script defer src="{{ $slbJS.RelPermalink }}"></script>
         {{- end -}}
 
-        {{ $js := resources.Get "lightbox.js" | resources.ExecuteAsTemplate "js/lightbox.js" . | minify }}
-        <script>{{ $js.Content | safeJS }}</script>
+        {{ $opts := dict "minify" hugo.IsProduction }}
+        {{ $lbpath := print .RelPermalink "js/lightbox.js" }}
+        {{ $js := resources.Get "js/lightbox.js" | resources.ExecuteAsTemplate $lbpath . | js.Build $opts | fingerprint }}
+        <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{- end -}}
 </head>
