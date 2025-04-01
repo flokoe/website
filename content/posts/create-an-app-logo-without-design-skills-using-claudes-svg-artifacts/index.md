@@ -15,8 +15,6 @@ So why not ask the mighty AI?
 Claude's Artifacts can preview SVGs directly, a good tool for an iterative, exploratory approach.
 Initially skeptical, I was pleasantly surprised by the results — more than adequate for my weekend project.
 
-## Setting the Context
-
 My project was a GTK4/Adwaita application for the GNOME desktop.
 To ensure design consistency, I turned to GNOME's Human Interface Guidelines (HIG), which outline how applications should look and behave, including specifications for [app icons](https://developer.gnome.org/hig/guidelines/app-icons.html).
 
@@ -28,36 +26,32 @@ My initial prompt included the entire HIG along with details about my applicatio
 first-prompt.webp|Result of the one-shot prompt. Not exactly what I had in mind.
 {{< /gallery >}}
 
-well, not really what i expect, but to be fair, I didnt know what to expect really.
+Well, not really what I expected, but to be fair, I didn't give it much thought.
+So let's iterate and give the AI more to work on. I had some sort of audio wave signal in mind.
 
-This is the second learning, one shots are problably not what i want
-
-So lets iterate and give the AI more to work on. I had some sort of audio wave
-signal in mind so in my second prompt i gave the direction
-
-{{< gallery "second prompt" >}}
-second-prompt.webp|alttext
+{{< gallery "The second attempt." >}}
+second-prompt.webp|The second attempt.
 {{< /gallery >}}
 
-more like it but still kinda janky. The striche are very think, not centered and
-i dont know what the dott  circle should be.
+More like it, but still kind of janky.
+The vertical bars are too thin, not centered and I don't know about the random dotted circle.
+Let's see what we can do about it.
 
-Now the third try kinda suprise, because it looks acceptale for the first time.
+Now, the third try did surprise me because it looked acceptable for the first time.
 
-{{< gallery "second prompt" >}}
-third-prompt.webp
+{{< gallery "The first acceptable result." >}}
+third-prompt.webp|The first acceptable result.
 {{< /gallery >}}
 
-This was more familiar with some app icons that already exsist. The audio wave
-was still janky, but the direction was right. I played some more around with
-colors and icons, mostly unsuccessful. None of the version were perfect, but
-hrere were two there were interesting. one with a nice gradient the other with
-vertical vsrs.
+This design looked more like app icons I was already familiar with.
+While the audio wave still looked odd, the overall direction was promising.
+I experimented with various colors and icons, though most attempts were unsuccessful.
+None of the versions were particularly good, but two stood out: one featuring an appealing gradient and another with better vertical bars.
 
-{{< gallery "second prompt" >}}
-variant1.webp
-variant2.webp
-variant3.webp
+{{< gallery "Some experiments." >}}
+variant1.webp|Weird interpretation of an audio wave.
+variant2.webp|Good vertical bars.
+variant3.webp|Nice looking red gradient.
 variant4.webp
 variant5.webp
 variant6.webp
@@ -97,6 +91,7 @@ So what are the learnings for this?
 - do not hang up on lettgin the ai do it
 
 - first learning, if you have design material, examples etc give it
+- This is the second learning, one shots are problably not what i want
 
 For this looked good enoigh. Sure, is it the best and most recognizable logo? No
 
