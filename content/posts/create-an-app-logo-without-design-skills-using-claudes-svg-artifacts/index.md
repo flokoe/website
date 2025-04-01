@@ -6,39 +6,26 @@ description: foobar
 publishDate: '2025-03-31T23:52:00+02:00'
 ---
 
-I have created a good-enough looking logo for my week end project in minutes
-without any design skills or expensive software using Claude's SVG artifact
-feature.
+I have created a good enough looking logo for my weekend project in minutes.
+Without any design skills or expensive software using Claude's SVG artifact feature.
 
-I am a SRE/Platform engineer nad I like visual pleasing designs, but I got
-absolutely zero skill or feeling to create such designs by myself and to be hostes
-i am not really keen in invest the time to learn it-
+As an SRE/Platform engineer, I appreciate visually pleasing designs but lack both the skills to create them and the interest in learning design software.
+So why not ask the mighty AI?
 
-so I though why not ask mighty AI? First my hopes where not htat hi, but in the
-end the result where good enough fit, atleast for my projects.
+Claude's Artifacts can preview SVGs directly, a good tool for an iterative, exploratory approach.
+Initially skeptical, I was pleasantly surprised by the results — more than adequate for my weekend project.
 
-Turns out, Claudes Artifacts can geneerate and preview svg directly and kinda
-work for iterative and explorative approach without learning Inkascape or how svg
-works (which is kind of a downside, a´but a compromise that worjed for me in themmoment)
+## Setting the Context
 
-So how to approach this task? As we want to prompt the AI we need to construct the
-correct context for the Ai lets think about waht we want to achive. In my case,
-I want A GTK4/Adwaita Aplpication for the GNOME Desktop.
+My project was a GTK4/Adwaita application for the GNOME desktop.
+To ensure design consistency, I turned to GNOME's Human Interface Guidelines (HIG), which outline how applications should look and behave, including specifications for [app icons](https://developer.gnome.org/hig/guidelines/app-icons.html).
 
-luckily the gnome Ecosystem provide the Human interface guidelines which explain
-how thinkgs should look and behavio in the Gnome Aplication. It also says a bit about
-[app icons](https://developer.gnome.org/hig/guidelines/app-icons.html).
+I compiled all the HIG's restructured text files into a single document for Claude.
+In retrospect, just the icon guidelines page would probably have been sufficient.
+My initial prompt included the entire HIG along with details about my application's name and purpose.
 
-first learning, if you have design material, examples etc give it
-
-So i concatrunates all the restctructed text files of the HIG into one single
-big file (im nachinhein, the icon page would probably been enough)
-
-So my first promt was just the entire HIG a little context about my application,
-what it does and how it  was called.
-
-{{< gallery "Result of the one-shot prompt" >}}
-first-prompt.webp Result of the one-shot prompt
+{{< gallery "Result of the one-shot prompt. Not exactly what I had in mind." >}}
+first-prompt.webp|Result of the one-shot prompt. Not exactly what I had in mind.
 {{< /gallery >}}
 
 well, not really what i expect, but to be fair, I didnt know what to expect really.
@@ -49,7 +36,7 @@ So lets iterate and give the AI more to work on. I had some sort of audio wave
 signal in mind so in my second prompt i gave the direction
 
 {{< gallery "second prompt" >}}
-second-prompt.webp alttext
+second-prompt.webp|alttext
 {{< /gallery >}}
 
 more like it but still kinda janky. The striche are very think, not centered and
@@ -83,6 +70,38 @@ and removed the "sound wave", copy the bars frome the other version and clean it
 {{< gallery "second prompt" >}}
 clean-version.webp
 {{< /gallery >}}
+
+Now that i got the lement that i want, i just need to reorder them as i like. I
+probably could have done thah manually in Inkscape, but i was curious if the AI
+could do this to. And to my suprise i worked rather well. Center and like a wave
+form.
+
+{{< gallery "second prompt" >}}
+centered-version.webp
+{{< /gallery >}}
+
+After using this version mir aufgefallen, that
+the 3d effect at the bottom is hard to see. So i asked the ai to make it thicker and darker
+and this worked flawlessly.
+
+{{< gallery "second prompt" >}}
+centered-version.webp|foo
+{{< /gallery >}}
+
+So what are the learnings for this?
+
+- simple and small projects
+- if yyuo got design docs/guideliens us them as context
+- dont extepc one shots
+- dont expect perfect/final version, dont be afraid to bastel manually
+- do not hang up on lettgin the ai do it
+
+- first learning, if you have design material, examples etc give it
+
+For this looked good enoigh. Sure, is it the best and most recognizable logo? No
+
+but for people like me, who work alone on our weekend project, how dont have the skill,
+or will to learn to do this, this is afeasabvle approch.
 
 In my specific case I needed a Logo for my GTK/adwaita application.
 
