@@ -57,29 +57,28 @@ variant5.webp
 variant6.webp
 {{< /gallery >}}
 
-I could have tried to merge these two versions but it was easiewr to mergen by hand.
-i just pasted the one with the nice gradient itono an [svg viewer](https://www.svgviewer.dev/)
-and removed the "sound wave", copy the bars frome the other version and clean it a bit up.
+I could have tried to merge these two versions via AI, but it seemed easier to merge them by hand.
+I just pasted the one with the nice gradient into an [SVG Viewer](https://www.svgviewer.dev/) and removed the old sound wave.
+After that I copied the good vertical bars from the other version.
 
-{{< gallery "second prompt" >}}
-clean-version.webp
+{{< gallery "Result of manually merging the two versions." >}}
+clean-version.webp|Result of manually merging the two versions.
 {{< /gallery >}}
 
-Now that i got the lement that i want, i just need to reorder them as i like. I
-probably could have done thah manually in Inkscape, but i was curious if the AI
-could do this to. And to my suprise i worked rather well. Center and like a wave
-form.
+After I only got the elements I liked, I just need to reorder them.
+This would probably be easy to do manually in Inkscape, but I was curious if the AI would be able to complete this task.
+To my surprise, it worked rather well.
 
-{{< gallery "second prompt" >}}
-centered-version.webp
+{{< gallery "The AI created a waveform and centered it perfectly." >}}
+centered-version.webp|The AI created a waveform and centered it perfectly.
 {{< /gallery >}}
 
-After using this version mir aufgefallen, that
-the 3d effect at the bottom is hard to see. So i asked the ai to make it thicker and darker
-and this worked flawlessly.
+There was just one last thing that bothered me.
+The 3D effect at the bottom was difficult to see.
+So I asked the AI to make it thicker and darker and this worked flawlessly.
 
-{{< gallery "second prompt" >}}
-centered-version.webp|foo
+{{< gallery "Make the 3D effect at the bottom darker and thicker." >}}
+rework-3d-effect.webp|Make the 3D effect at the bottom darker and thicker.
 {{< /gallery >}}
 
 So what are the learnings for this?
