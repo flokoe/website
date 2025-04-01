@@ -103,5 +103,3 @@ In my specific case I needed a Logo for my GTK/adwaita application.
 so i coudl vorstellen for someone who actallly knows they are doing this for
 low to medium complex project this could speed up their work
 or not ymmv
-
-{{% plug %}}
