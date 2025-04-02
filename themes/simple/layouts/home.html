@@ -68,7 +68,8 @@
                 <h2>Recent Posts</h2>
                 <ul>
                     {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} min read</span></li>
+                        {{ $date := or .PublishDate .Date }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span><time datetime="{{ $date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $date.Format "2006-01-02" }}</time> · {{ .ReadingTime }} min read</span></li>
                     {{ end }}
                 </ul>
             </section>
