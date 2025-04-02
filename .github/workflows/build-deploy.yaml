@@ -19,3 +19,4 @@ jobs:
     secrets:
       host_key: ${{ secrets.SSH_KNOWN_HOSTS }}
       private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      plausible_token: ${{ secrets.HUGO_PLAUSIBLE_TOKEN }}
