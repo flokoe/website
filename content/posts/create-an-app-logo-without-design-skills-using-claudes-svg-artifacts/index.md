@@ -75,30 +75,22 @@ centered-version.webp|The AI created a waveform and centered it perfectly.
 
 There was just one last thing that bothered me.
 The 3D effect at the bottom was difficult to see.
-So I asked the AI to make it thicker and darker and this worked flawlessly.
+So I asked the AI to make it thicker and darker and it worked flawlessly.
 
 {{< gallery "Make the 3D effect at the bottom darker and thicker." >}}
 rework-3d-effect.webp|Make the 3D effect at the bottom darker and thicker.
 {{< /gallery >}}
 
-So what are the learnings for this?
+Within a few minutes, I got an app logo that I am pretty happy with.
+Sure, is it the best and most recognizable logo? No.
+Also, no. Could they do it faster? Probably.
+But for people like me, who work alone on our weekend project and don't have the necessary skill set, it may prevent some frustration.
 
-- simple and small projects
-- if yyuo got design docs/guideliens us them as context
-- dont extepc one shots
-- dont expect perfect/final version, dont be afraid to bastel manually
-- do not hang up on lettgin the ai do it
+**So what are my learnings for this project?**
 
-- first learning, if you have design material, examples etc give it
-- This is the second learning, one shots are problably not what i want
-
-For this looked good enoigh. Sure, is it the best and most recognizable logo? No
-
-but for people like me, who work alone on our weekend project, how dont have the skill,
-or will to learn to do this, this is afeasabvle approch.
-
-In my specific case I needed a Logo for my GTK/adwaita application.
-
-so i coudl vorstellen for someone who actallly knows they are doing this for
-low to medium complex project this could speed up their work
-or not ymmv
+- Keep it simple and small.
+- Use existing design guidelines and examples as context.
+- Do not expect the first version to be perfect.
+- If the AI fails, do not be afraid to fix things manually.
+- Do not waste your time trying to force the AI to create the perfect result.
+- Use intermediate results as a new base/context.
