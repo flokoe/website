@@ -1,8 +1,8 @@
 ---
 title: Create an App Logo Without Design Skills Using Claude's SVG Artifacts
 date: 2025-03-28T13:50:06+01:00
-draft: true
-description: foobar
+draft: false
+description: Learn how to create app logos using Claude's SVG artifacts without design skills. A step-by-step guide for developers working on weekend projects.
 publishDate: '2025-03-31T23:52:00+02:00'
 ---
 
