@@ -40,8 +40,9 @@ For those who are wondering what I am currently working on or interested in, her
 - My current color scheme is [Catppuccin Mocha](https://github.com/catppuccin/catppuccin).
 - I love Vim, but mostly use VS Code nowadays.
 - My font of choice is Hack.
-- Fish Shell and Kitty terminal make my life easier.
+- Fish Shell and Ghostty terminal make my life easier.
 - My primary programming languages are Python, Bash and sometimes JavaScript.
+- Have a look at [my dotfiles](https://github.com/flokoe/dotfiles).
 
 Inspired by [Derek Sivers' *The /now page movement*](https://sive.rs/nowff) and [Jamie Tanna's Now Page](https://www.jvt.me/now/).
 See [The /now page movement](https://nownownow.com/about).
