@@ -10,16 +10,21 @@ publishDate:
 
 ## tl;dr
 
-after my research for a static html blog there are my recommendes settings:
+After my research these are my recommended settings for static content:
 
 - foo
 - bar
 
-a few days ago i migrated my blog aways from Netlfy to host it myself again.
+## The Quest for Better Caching
 
-that meant i hav o configure http caching by myself and even though it not that complicated i just ciould get it in my head. so what is the best way to understand thing by youself? if you explain it to others, so here we go.
+A few weeks ago I migrated my blog away from Netlify to host it myself again.
 
-HTTP caching is nothing new and very good documentes. So this is mostly a summary and reference to myself. If you want to dig deeper at the end i have listed all my [sources I have used for this post].
+That meant I have to configure HTTP caching by myself and even though it it not that complicated I just could not get it in my head.
+And as the best way to understand things is to explain them to others, here is my attempt.
+
+HTTP caching is nothing new and has good documentation.
+So this is mostly a summary and reference to myself.
+If you want to dig deeper at the end I have listed all my sources I have used for this post.
 
 - what i http caching (loca lcient caching aka proxy/browser caching)
 - how does caching work?
