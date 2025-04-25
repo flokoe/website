@@ -12,8 +12,9 @@ publishDate:
 
 After my research these are my recommended settings for static content:
 
-- foo
-- bar
+```plain
+# foobar
+```
 
 ## The Quest for Better Caching
 
@@ -26,13 +27,18 @@ HTTP caching is nothing new and has good documentation.
 So this is mostly a summary and reference to myself.
 If you want to dig deeper at the end I have listed all my sources I have used for this post.
 
+## What is HTTP Caching?
+
 - what i http caching (loca lcient caching aka proxy/browser caching)
+- same header for different things, can send from brwoser or any client and server
+
+## How Does HTTP Caching Work?
+
 - how does caching work?
 - how does legacy caching no cache control header work?
 - how does cache control header work?
-- settings for browser caching
 
-same header for different things, can send from brwoser or any client and server
+## How to Make the Best Use of HTTP Caching
 
 {{% plug %}}
 
