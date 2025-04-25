@@ -29,14 +29,22 @@ If you want to dig deeper at the end I have listed all my sources I have used fo
 
 ## What is HTTP Caching?
 
-- what i http caching (loca lcient caching aka proxy/browser caching)
-- same header for different things, can send from brwoser or any client and server
+HTTP Caching, Web Cache, Proxy Cache, Browser Cache or just the Cache.
+As we can see, this term is heavily loaded, and mostly refers to two technologies: HTTP Caching as defined in [RFC 9111](https://httpwg.org/specs/rfc9111.html) or caching content server side in RAM on the edge via applications like Varnish.
+
+This post is about HTTP Caching (sometimes Web Cache) on the protocol level, which components like proxies and browsers partially implement.
+The browser itself has multiple different Cache mechanisms, but the mechanism that handles the HTTP Cache is sometimes referred to as the Disk Cache (commonly known as just the browser cache, which is misleading as there is no single browser cache).
+For the curious, I recommend reading [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) by Yoav Weiss, which explains the different cache mechanisms in the browser.
+
+Important to understand is that the behavior of the HTTP Cache is controlled via different HTTP headers, mostly `Cache-Control`.
+The final behavior is the result of the exchange of varying cache-related headers between the local client (Browser or even curl) and the remote (origin or proxy server).
 
 ## How Does HTTP Caching Work?
 
 - how does caching work?
 - how does legacy caching no cache control header work?
 - how does cache control header work?
+- same header for different things, can send from brwoser or any client and server
 
 ## How to Make the Best Use of HTTP Caching
 
@@ -44,6 +52,7 @@ If you want to dig deeper at the end I have listed all my sources I have used fo
 
 ## Sources
 
+- [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) by Yoav Weiss
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching>
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control>
 - <https://csswizardry.com/2019/03/cache-control-for-civilians/>
