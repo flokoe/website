@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-next-line MD041 -->
-## Did I add value?
+## Did I Add Value?
 
 I don't like ads, and I respect your privacy. Therefore my blog has no advertisements or any tracking cookies.
 
