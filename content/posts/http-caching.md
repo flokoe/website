@@ -8,16 +8,6 @@ publishDate:
 
 {{< toc >}}
 
-## tl;dr
-
-After my research these are my recommended settings for static content:
-
-```plain
-# foobar
-```
-
-## The Quest for Better Caching
-
 A few weeks ago I migrated my blog away from Netlify to host it myself again.
 
 That meant I have to configure HTTP caching by myself and even though it it not that complicated I just could not get it in my head.
@@ -26,6 +16,17 @@ And as the best way to understand things is to explain them to others, here is m
 HTTP caching is nothing new and has good documentation.
 So this is mostly a summary and reference to myself.
 If you want to dig deeper at the end I have listed all my sources I have used for this post.
+
+> **tl;dr**
+>
+> After my research these are my recommended settings for static public content:
+>
+> - Main contennt like HTML pages, where URLs don't change: `no-cache`
+> - Static assets (unique URLs on each change, fingerprint):  
+>   `max-age=31536000, immutable`
+> - Images, that change infrequently and are not critical: `max-age=604800`
+> - Images that need to be updated frequently (depends on traffic and frequency):
+>   `max-age=600, must-revalidate, stale-while-revalidate=300`
 
 ## What is HTTP Caching?
 
