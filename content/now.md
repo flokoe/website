@@ -14,7 +14,7 @@ For those who are wondering what I am currently working on or interested in, her
 **Last updated:** {{% lastmod %}}
 
 - Increase knowledge in DevSecOps.
-- Implementing internal and dynamic dev/preview environments via HashiCorp Nomad.
+- Migrating to Kubernetes.
 - Optimize Docker images.
 - Try vibing a local first speech-to-text AI GTK4/Adwaita desktop application.
 - Building a small wooden sailing boat/dinghy.
