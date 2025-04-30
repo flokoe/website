@@ -19,8 +19,6 @@
 
     {{ with $thumb }}
         <meta property="og:image" content="{{ .Permalink }}">
-    {{ else }}
-        <meta property="og:image" content="{{ .Site.BaseURL }}default_thumbnail.jpg">
     {{ end }}
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
