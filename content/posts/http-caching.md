@@ -10,7 +10,9 @@ publishDate:
 
 A few weeks ago I migrated my blog away from Netlify to host it myself again.
 
-That meant I have to configure HTTP caching by myself and even though it it not that complicated I just could not get it in my head.
+That meant I have to configure HTTP caching by myself.
+Proper HTTP caching can dramatically improve website performance and user experience, especially on small servers.
+It is not that complicated but somehow I just couldn't get it in my head.
 And as the best way to understand things is to explain them to others, here is my attempt.
 
 HTTP caching is nothing new and has good documentation.
@@ -31,9 +33,10 @@ If you want to dig deeper at the end I have listed all my sources I have used fo
 ## What is HTTP Caching?
 
 HTTP Caching, Web Cache, Proxy Cache, Browser Cache or just the Cache.
-As we can see, this term is heavily loaded, and mostly refers to two technologies: HTTP Caching as defined in [RFC 9111](https://httpwg.org/specs/rfc9111.html) or caching content server side in RAM on the edge via applications like Varnish.
+As we can see, this term is heavily loaded, and mostly refers to two technologies: HTTP Caching on the protocol level as defined in [RFC 9111](https://httpwg.org/specs/rfc9111.html) or caching content server side in RAM on the edge via applications like Varnish.
 
-This post is about HTTP Caching (sometimes Web Cache) on the protocol level, which components like proxies and browsers partially implement.
+This post is about HTTP Caching (sometimes Web Cache) on the protocol level, which components like proxies and browsers partially implement. This is the most common cache mechanism which is easy to implement and has wide adoption.
+
 The browser itself has multiple different Cache mechanisms, but the mechanism that handles the HTTP Cache is sometimes referred to as the Disk Cache (commonly known as just the "browser cache", which is misleading as there is no single browser cache).
 For the curious, I recommend reading [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) by Yoav Weiss, which explains the different cache mechanisms in the browser.
 
@@ -58,6 +61,7 @@ If not, the resources will be marked as fresh again and reused.
 This is the last resort if no information about the cache behavior is provided.
 The client just looks at the `Last-Modified` header and assumes that resources that haven't changed recently won't change anytime soon, and caches it for maybe 10% of the time that the resource hasn't changed (this may vary by implementation).
 
+For example, a resource that hasn't change for a year will be cache for about 36 days.
 That's probably not what you want, and you should always provide a `Cache-Control` header.
 
 ### `Expires` Header
@@ -153,14 +157,12 @@ For other content like images, it depends on your preference and use case, for m
 The perfect settings are something one has to experiment with.
 But as usual, it is best to keep it simple and stick to reasonable values and trying them for some time before changing them or building super complex setups.
 
+## Further Reading
+
+- [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/): A fascinating view into the different browser cache mechanisms.
+- [MDN HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching) and [HTTP Caching explained](https://http.dev/caching): Some general explanations of HTTP Caching.
+- [Cache-Control for Civilians](https://csswizardry.com/2019/03/cache-control-for-civilians/): Easy to understand and simple everyday examples.
+- [Caching Tutorial for Web Authors and Webmasters](https://www.mnot.net/cache_docs/): Comprehensive information about HTTP Caching and how to implement it, partly a bit dated, but still an interesting read.
+- [Cache-Control - Expert Guide to HTTP headers](https://http.dev/cache-control) and [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control): Use as reference for `Cache-Control` directives.
+
 {{% plug %}}
-
-## Sources
-
-- [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/)
-- [MDN HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching)
-- [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control)
-- [Cache-Control for Civilians](https://csswizardry.com/2019/03/cache-control-for-civilians/)
-- [Caching Tutorial for Web Authors and Webmasters](https://www.mnot.net/cache_docs/)
-- [HTTP Caching explained](https://http.dev/caching)
-- [Cache-Control - Expert Guide to HTTP headers](https://http.dev/cache-control)
