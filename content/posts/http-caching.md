@@ -1,9 +1,10 @@
 ---
 title: "HTTP Caching aka. Cache-Control"
 date: 2025-03-31T15:30:34+02:00
-draft: true
-description:
-publishDate:
+draft: false
+description: Learn how to implement proper HTTP caching strategies to dramatically improve website performance. Includes recommended settings for HTML, static assets, and images.
+publishDate: 2025-04-30T23:32:06+02:00
+menu: favorites
 ---
 
 {{< toc >}}
