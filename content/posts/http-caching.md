@@ -33,7 +33,7 @@ HTTP Caching, Web Cache, Proxy Cache, Browser Cache or just the Cache.
 As we can see, this term is heavily loaded, and mostly refers to two technologies: HTTP Caching as defined in [RFC 9111](https://httpwg.org/specs/rfc9111.html) or caching content server side in RAM on the edge via applications like Varnish.
 
 This post is about HTTP Caching (sometimes Web Cache) on the protocol level, which components like proxies and browsers partially implement.
-The browser itself has multiple different Cache mechanisms, but the mechanism that handles the HTTP Cache is sometimes referred to as the Disk Cache (commonly known as just the browser cache, which is misleading as there is no single browser cache).
+The browser itself has multiple different Cache mechanisms, but the mechanism that handles the HTTP Cache is sometimes referred to as the Disk Cache (commonly known as just the "browser cache", which is misleading as there is no single browser cache).
 For the curious, I recommend reading [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) by Yoav Weiss, which explains the different cache mechanisms in the browser.
 
 Important to understand is that the behavior of the HTTP Cache is controlled via different HTTP headers, mostly `Cache-Control`.
@@ -41,22 +41,125 @@ The final behavior is the result of the exchange of varying cache-related header
 
 ## How Does HTTP Caching Work?
 
-- how does caching work?
-- how does legacy caching no cache control header work?
-- how does cache control header work?
-- same header for different things, can send from brwoser or any client and server
+Modern browsers are pretty smart and always try to cache as many resources as possible. Even if you do not provide explicit cache headers.
+In this case, the browser tries to heuristically cache resources.
+
+Before we proceed, we have to understand the following concept: freshness.
+
+A resource is considered fresh when certain conditions are met.
+Fresh resources will be reused from the cache.
+Stale resources must first be validated before being used.
+This means the server has to be asked if the resource has changed.
+If not, the resources will be marked as fresh again and reused.
+
+### Heuristic Caching
+
+This is the last resort if no information about the cache behavior is provided.
+The client just looks at the `Last-Modified` header and assumes that resources that haven't changed recently won't change anytime soon, and caches it for maybe 10% of the time that the resource hasn't changed (this may vary by implementation).
+
+That's probably not what you want, and you should always provide a `Cache-Control` header.
+
+### `Expires` Header
+
+In HTTP/1.0 the `Expires` header was added and browsers use it to determine freshness, but the date format is difficult to parse and therefore, in HTTP/1.1 `Cache-Control` got added.
+
+Some servers add the `Expires` header for compatibility, but `Cache-Control` always has priority.
+The `Expires` header is deprecated, and you should not use it anymore.
+
+### `Cache-Control` Header
+
+The `Cache-Control` header has many directives and can be sent in the request and response.
+Some directives are only available in one or the other.
+Some directives work in both, but have different functions.
+
+The most common directive is probably `max-age` ("successor" of the `Expires` header) and determines how long a response can be considered as fresh (like a TTL).
+Let's consider our browser requesting a resource for the firs time, we may get a response like this.
+
+```bash {lineNos=inline hl_lines=[4, 7,8,11]}
+$ curl -I http://localhost/
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: max-age=3600
+Content-Length: 18753
+Content-Type: text/html; charset=utf-8
+Etag: "d9cob51d320wegx"
+Last-Modified: Mon, 21 Apr 2025 22:34:35 GMT
+Server: Caddy
+Vary: Accept-Encoding
+Date: Tue, 29 Apr 2025 18:58:24 GMT
+```
+
+As we can see in lines 4 and 11, the response has a `max-age` of 3600 and was generated at 18:58:24 GMT.
+So within the time frame of the date plus the seconds of `max-age` the response would be considered to be fresh.
+A new request to the same resource within this time frame would just reuse the local cache.
+A request after this point would first ask the server if the response is still valid before reusing it.
+
+### Validation
+
+The process of asking the server if a local resource is still up-to-date is called validation.
+To validate a cached response, the client sends a conditional request to the same resource and provides the `If-Modified-Since` header with the current date and `If-None-Match` header with the ETag of the original response.
+
+The server then uses these headers to determine if the resource has changed.
+If both headers are provided, the ETag has precedence.
+If the resource is the same or has not changed, the server simply answers with an `304 Not Modified` without sending the entire resource again.
+
+```bash {lineNos=inline}
+# Notice the quotes around the ETag, these have to be included in the header
+$ curl -I -H 'If-None-Match: "d9cob51d320wegx"' http://localhost/
+HTTP/1.1 304 Not Modified
+Cache-Control: max-age=3600
+Etag: "d9cob51d320wegx"
+Server: Caddy
+Vary: Accept-Encoding
+Date: Tue, 29 Apr 2025 19:53:00 GMT
+
+# Check current date against Last-Modified date
+$ curl -I -H "If-Modified-Since: Tue, 29 Apr 2025 21:53:00 GMT" http://localhost/
+HTTP/1.1 304 Not Modified
+Cache-Control: max-age=3600
+Etag: "d9cob51d320wegx"
+Server: Caddy
+Vary: Accept-Encoding
+Date: Tue, 29 Apr 2025 19:53:59 GMT
+```
+
+The Browser now resets the `Date` and `Cache-Control` headers of the old response, which marks the resource as fresh again.
+
+### More Useful Directives
+
+First, there is `no-cache`, which against its name does not prevent caching and just instructs the browser to always ask the server if the resource is still valid before using the cache.
+
+With `immutable` the browser never bothers to even send validation requests.
+Only use this if the resource has a unique path like a fingerprint or version parameter in the URL.
+
+`must-revalidate` forces the browser to validate the resource as soon as it becomes stale.
+This can be useful for resources that always must be up-to-date, but be careful this will result in an 504 if the origin is unreachable.
+
+There are many more directives, for a reference, I recommend having a look at [Cache-Control - Expert Guide to HTTP headers](https://http.dev/cache-control)
+and [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control).
 
 ## How to Make the Best Use of HTTP Caching
+
+Now that we know how HTTP Caching works, it leaves the question of how we can benefit from it.
+
+This is probably needs to be a decision on a case by case bases, but for public resources `no-cache` is most likely a safe default.
+This instructs the client to cache the resources but validate them every time.
+
+For static resources like assets with good cache busting, you can use a high `max-age` and `immutable`.
+
+For other content like images, it depends on your preference and use case, for most images you can probably safely use `max-age` time of a few days or weeks.
+
+The perfect settings are something one has to experiment with.
+But as usual, it is best to keep it simple and stick to reasonable values and trying them for some time before changing them or building super complex setups.
 
 {{% plug %}}
 
 ## Sources
 
-- [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) by Yoav Weiss
-- <https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching>
-- <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control>
-- <https://csswizardry.com/2019/03/cache-control-for-civilians/>
-- <https://jakearchibald.com/2016/caching-best-practices/>
-- <https://www.mnot.net/cache_docs/>
-- <https://http.dev/caching>
-- <https://http.dev/cache-control>
+- [A Tale of Four Caches](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/)
+- [MDN HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching)
+- [MDN Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control)
+- [Cache-Control for Civilians](https://csswizardry.com/2019/03/cache-control-for-civilians/)
+- [Caching Tutorial for Web Authors and Webmasters](https://www.mnot.net/cache_docs/)
+- [HTTP Caching explained](https://http.dev/caching)
+- [Cache-Control - Expert Guide to HTTP headers](https://http.dev/cache-control)
